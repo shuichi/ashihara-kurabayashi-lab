@@ -60,6 +60,37 @@ test("all content, mobile navigation, and FAQ work without JavaScript", async ({
   await context.close();
 });
 
+test("news links and the early visit enquiry work in both languages without JavaScript", async ({
+  browser,
+  baseURL,
+}) => {
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    viewport: { width: 390, height: 844 },
+  });
+  const page = await context.newPage();
+  for (const language of ["", "en/"]) {
+    await page.goto(baseURL! + language);
+    await expect(page.locator("#news .news-list > li")).toHaveCount(3);
+    await expect(
+      page.locator('#news a[href="https://www.cygames.co.jp/news/id-24983/"]'),
+    ).toBeVisible();
+    await expect(
+      page.locator('#news a[href="https://doi.org/10.11517/jjsai.41.5_582"]'),
+    ).toBeVisible();
+    const dates = await page
+      .locator("#news time")
+      .evaluateAll((elements) => elements.map((element) => element.getAttribute("datetime")));
+    expect(dates).toEqual(["2026-09-04", "2026-09-01", "2026-04-01"]);
+    await page.goto(baseURL! + language + "students/");
+    const enquiry = page.locator(".visit-callout .primary-link");
+    await expect(enquiry).toBeInViewport();
+    await enquiry.click();
+    await expect(page).toHaveURL(baseURL! + language + "contact/");
+  }
+  await context.close();
+});
+
 test("old URLs, anchors, language links, history, and real 404 responses", async ({
   page,
   baseURL,
@@ -112,6 +143,20 @@ test("keyboard menu, skip link, theme persistence, and dark contrast", async ({
       .analyze();
     expect(axe.violations).toEqual([]);
   }
+});
+
+test("a delayed fragment event does not steal focus from the mobile menu", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("");
+  await page.evaluate(async () => {
+    const changed = new Promise<void>((resolve) =>
+      window.addEventListener("hashchange", () => resolve(), { once: true }),
+    );
+    location.hash = "main";
+    document.querySelector<HTMLElement>(".mobile-navigation summary")!.focus();
+    await changed;
+  });
+  await expect(page.locator(".mobile-navigation summary")).toBeFocused();
 });
 
 test("motion can pause and respects reduced motion and offscreen visibility", async ({ page }) => {

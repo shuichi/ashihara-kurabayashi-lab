@@ -2,6 +2,7 @@ import { PageLink } from "@/components/page-link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
 import { KnowledgeField } from "@/components/knowledge-field";
 import { ContactCallout } from "@/components/contact-callout";
+import { NewsSection } from "@/components/news-section";
 import { useSite } from "@/components/site-shell";
 import { copy } from "./content";
 import { navigation, structureCopy } from "./navigation";
@@ -67,6 +68,7 @@ export default function Home() {
           <p>{t.focus}</p>
         </div>
       </div>
+      <NewsSection />
       <section id="about" className="section container about-section" aria-labelledby="about-title">
         <h2 id="about-title" className="home-section-title">
           {s.about}

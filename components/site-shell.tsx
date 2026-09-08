@@ -45,13 +45,26 @@ export function SiteShell({ children, ...site }: SiteProps & { children: ReactNo
           <div className="header-inner">
             <a
               href={home}
-              className="wordmark"
+              className="wordmark wordmark-with-symbol"
               aria-label={
                 language === "ja" ? "芦原・倉林研究室 ホーム" : "Ashihara-Kurabayashi Lab. home"
               }
             >
-              <span lang="ja">芦原・倉林研究室</span>
-              <span lang="en">Ashihara-Kurabayashi Lab.</span>
+              <img
+                src={`${base.replace(/\/$/, "")}/favicon.svg`}
+                className="wordmark-symbol"
+                width={40}
+                height={40}
+                alt=""
+              />
+              <span className="wordmark-copy">
+                <span className="wordmark-name" lang="ja">
+                  芦原・倉林研究室
+                </span>
+                <span className="wordmark-translation" lang="en">
+                  Ashihara-Kurabayashi Lab.
+                </span>
+              </span>
             </a>
             <div className="header-controls">
               <nav className="language-control" aria-label="Language / 言語">
@@ -106,8 +119,12 @@ export function SiteShell({ children, ...site }: SiteProps & { children: ReactNo
         <footer className="site-footer">
           <div className="container footer-inner">
             <a href={home} className="wordmark">
-              <span lang="ja">芦原・倉林研究室</span>
-              <span lang="en">Ashihara-Kurabayashi Lab.</span>
+              <span className="wordmark-name" lang="ja">
+                芦原・倉林研究室
+              </span>
+              <span className="wordmark-translation" lang="en">
+                Ashihara-Kurabayashi Lab.
+              </span>
             </a>
             <nav
               className="footer-nav"

@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { PageLink } from "@/components/page-link";
 import { useSite } from "@/components/site-shell";
 import { PageHeader } from "@/components/page-header";
@@ -24,7 +24,28 @@ export function StudentsPage() {
           { href: "#roadmap", label: s.roadmap },
           { href: "#faq", label: s.faq },
         ]}
-      />
+      >
+        <section className="visit-callout" aria-labelledby="visit-title">
+          <div className="visit-heading">
+            <div>
+              <h2 id="visit-title">{t.visit.title}</h2>
+              <p>{t.visit.intro}</p>
+            </div>
+            <PageLink href="/contact" className="primary-link">
+              {t.visit.action}
+              <ArrowRight size={18} aria-hidden="true" />
+            </PageLink>
+          </div>
+          <dl className="visit-details">
+            {t.visit.details.map((detail) => (
+              <div key={detail.label}>
+                <dt>{detail.label}</dt>
+                <dd>{detail.text}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      </PageHeader>
       <section id="skills" className="students-section" aria-labelledby="skills-title">
         <div className="container section">
           <div className="students-heading">

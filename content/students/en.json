@@ -1,4 +1,23 @@
 {
+  "visit": {
+    "title": "Visit the lab or talk with us",
+    "intro": "Discuss research topics and learning opportunities before deciding whether to join the lab.",
+    "action": "Ask about a visit or joining",
+    "details": [
+      {
+        "label": "Who this is for",
+        "text": "Students considering joining the lab. Please include your institution or department and year of study."
+      },
+      {
+        "label": "Eligibility and timing",
+        "text": "Please contact us about eligibility and the schedule for joining."
+      },
+      {
+        "label": "How to get in touch",
+        "text": "Use the email addresses or form on our contact page. Tell us about your research interests and when you would like to visit."
+      }
+    ]
+  },
   "studentsTitle": ["From making things", "to making discoveries."],
   "studentsIntro": "Design, implement, train, and evaluate your own models—and turn them into working systems. We welcome students who want to go beyond using existing AI.",
   "studentsLink": "Read the FAQs",

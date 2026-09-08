@@ -1,0 +1,50 @@
+[
+  {
+    "id": "news-eccv-2026",
+    "date": "2026-09-04",
+    "url": "https://www.cygames.co.jp/news/id-24983/",
+    "publicationId": "publication-01",
+    "ja": {
+      "category": "論文採択",
+      "title": "Motion Style Slider が ECCV 2026 に採択されました",
+      "description": "倉林修一教授が共著者として参加した、Cygames Researchと東京科学大学の共同研究です。3Dキャラクターの演技スタイルを連続的に調整する技術を提案しています。"
+    },
+    "en": {
+      "category": "Research",
+      "title": "Motion Style Slider accepted at ECCV 2026",
+      "description": "Professor Shuichi Kurabayashi co-authored this joint study by Cygames Research and the Institute of Science Tokyo. The work introduces continuous control over the expressive style of 3D character motion."
+    }
+  },
+  {
+    "id": "news-jsai-2026-09",
+    "date": "2026-09-01",
+    "url": "https://doi.org/10.11517/jjsai.41.5_582",
+    "publicationId": "publication-33",
+    "ja": {
+      "category": "寄稿",
+      "title": "人工知能学会誌の特集に寄稿記事が掲載されました",
+      "description": "人工知能学会誌 Vol.41 No.5（2026年9月）の特集「デジタルゲームにおける人工知能技術の現状─機械学習を超えて─」に、倉林修一教授・芦原栄登士教授の寄稿記事が掲載されました。"
+    },
+    "en": {
+      "category": "Publication",
+      "title": "Faculty article published in the JSAI journal's special issue",
+      "description": "An article by Professors Shuichi Kurabayashi and Eitoshi Ashihara appeared in the Journal of the Japanese Society for Artificial Intelligence, Vol. 41, No. 5 (September 2026), in the special issue on the current state of AI technology in digital games beyond machine learning."
+    }
+  },
+  {
+    "id": "news-first-cohort",
+    "date": "2026-04-01",
+    "url": null,
+    "publicationId": null,
+    "ja": {
+      "category": "研究室",
+      "title": "芦原・倉林研究室の一期生として、4名の学生が配属されました",
+      "description": null
+    },
+    "en": {
+      "category": "Lab life",
+      "title": "Four students joined Ashihara–Kurabayashi Lab. as its first cohort",
+      "description": null
+    }
+  }
+]

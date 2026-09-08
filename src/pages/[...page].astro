@@ -10,7 +10,7 @@ import { navigation } from '../../app/navigation';
 import ashihara from '../../assets/profile-ashihara.png';
 import kurabayashi from '../../assets/profile-kurabayashi.png';
 export const getStaticPaths = (async () => {
-  await Promise.all([getCollection('home'), getCollection('research'), getCollection('people'), getCollection('publications'), getCollection('students'), getCollection('common'), getCollection('pages'), getCollection('navigation'), getCollection('bibliography'), getCollection('about')]);
+  await Promise.all([getCollection('home'), getCollection('research'), getCollection('people'), getCollection('publications'), getCollection('students'), getCollection('common'), getCollection('pages'), getCollection('navigation'), getCollection('bibliography'), getCollection('about'), getCollection('news')]);
   return languages.flatMap(language => pagePaths.map(pathname => ({
     params: { page: [language === 'en' ? 'en' : '', pathname.slice(1)].filter(Boolean).join('/') || undefined },
     props: { language, pathname },

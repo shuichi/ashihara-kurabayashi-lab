@@ -22,6 +22,7 @@ export function readContent(root = "content") {
       ]),
     ),
     bibliography: read("publications.json"),
+    news: read("news.json"),
     localized: Object.fromEntries(
       collections.map((name) => [
         name,
@@ -30,7 +31,7 @@ export function readContent(root = "content") {
     ),
   };
 }
-export function validateContent({ bibliography, localized, about }) {
+export function validateContent({ bibliography, localized, about, news }) {
   const errors = [];
   for (const language of ["ja", "en"]) {
     const markdown = about?.[language] || "";
@@ -63,6 +64,20 @@ export function validateContent({ bibliography, localized, about }) {
       errors.push(`Empty translated text: ${at}`);
   }
   for (const [name, values] of Object.entries(localized)) compare(values.ja, values.en, name);
+  const newsIds = new Set();
+  for (const item of news) {
+    if (newsIds.has(item.id)) errors.push(`Duplicate news ID: ${item.id}`);
+    newsIds.add(item.id);
+    if (
+      !/^\d{4}-\d{2}-\d{2}$/.test(item.date) ||
+      Number.isNaN(Date.parse(item.date)) ||
+      new Date(item.date).toISOString().slice(0, 10) !== item.date
+    )
+      errors.push(`Invalid news date: ${item.id}`);
+    if (item.publicationId && !ids.has(item.publicationId))
+      errors.push(`Missing news publication reference: ${item.id} -> ${item.publicationId}`);
+    compare(item.ja, item.en, `news.${item.id}`);
+  }
   for (const language of ["ja", "en"]) {
     const routes = localized.navigation[language].links.map((link) => link.href);
     if (routes.length !== pagePaths.length || pagePaths.some((route) => !routes.includes(route)))

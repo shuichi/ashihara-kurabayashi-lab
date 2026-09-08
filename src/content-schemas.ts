@@ -1,4 +1,27 @@
 import { z } from "astro/zod";
+const newsTranslationSchema = z
+  .object({
+    category: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1).nullable(),
+  })
+  .strict();
+export const newsSchema = z
+  .object({
+    id: z.string().regex(/^news-[a-z0-9-]+$/),
+    date: z.iso.date(),
+    url: z
+      .url()
+      .regex(/^https:\/\//)
+      .nullable(),
+    publicationId: z
+      .string()
+      .regex(/^publication-\d+$/)
+      .nullable(),
+    ja: newsTranslationSchema,
+    en: newsTranslationSchema,
+  })
+  .strict();
 export const homeSchema = z
   .object({
     title: z.array(z.string().min(1)).min(1),
@@ -92,6 +115,23 @@ export const publicationsSchema = z
   .strict();
 export const studentsSchema = z
   .object({
+    visit: z
+      .object({
+        title: z.string().min(1),
+        intro: z.string().min(1),
+        action: z.string().min(1),
+        details: z
+          .array(
+            z
+              .object({
+                label: z.string().min(1),
+                text: z.string().min(1),
+              })
+              .strict(),
+          )
+          .min(1),
+      })
+      .strict(),
     studentsTitle: z.array(z.string().min(1)).min(1),
     studentsIntro: z.string().min(1),
     studentsLink: z.string().min(1),

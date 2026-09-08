@@ -65,7 +65,10 @@ function focusAnchor() {
   }
   const target = document.getElementById(id);
   if (!target) return;
-  if (!target.hasAttribute("tabindex")) target.tabIndex = -1;
+  // Native focus already handles targets such as the skip link's main element.
+  // A later hashchange must not steal focus from the next keyboard action.
+  if (target.hasAttribute("tabindex")) return;
+  target.tabIndex = -1;
   target.focus({ preventScroll: true });
 }
 window.addEventListener("hashchange", focusAnchor);

@@ -3,15 +3,18 @@ import { ArrowLeft, ArrowDown } from "lucide-react";
 import { useSite } from "./site-shell";
 import { pageCopy } from "@/app/page-content";
 import { structureCopy } from "@/app/navigation";
+import type { ReactNode } from "react";
 
 export function PageHeader({
   title,
   intro,
   links = [],
+  children,
 }: {
   title: string;
   intro: string;
   links?: { href: string; label: string }[];
+  children?: ReactNode;
 }) {
   const { language } = useSite();
   return (
@@ -22,6 +25,7 @@ export function PageHeader({
       </PageLink>
       <h1>{title}</h1>
       <p className="section-intro">{intro}</p>
+      {children}
       {links.length > 0 && (
         <nav className="page-contents" aria-label={structureCopy[language].contents}>
           <p>{structureCopy[language].contents}</p>
