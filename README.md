@@ -31,9 +31,11 @@ npm run build
 
 GitHub Pagesでは次の手順で公開します。
 
-1. リポジトリーの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定します。
+1. [リポジトリーのPages設定](https://github.com/shuichi/ashihara-kurabayashi-lab/settings/pages)で **Build and deployment → Source** を **GitHub Actions** に設定します。
 2. 変更を `main` ブランチへpushします。別のブランチから公開する場合は `.github/workflows/pages.yml` の `on.push.branches` を変更してください。
-3. ワークフローが依存関係のインストール、型チェック、ルーティングテスト、ビルドを実行し、`dist/` を公開します。Actions画面から手動実行もできます。
+3. [Actions画面](https://github.com/shuichi/ashihara-kurabayashi-lab/actions)の **Deploy to GitHub Pages** が成功すると公開完了です。ワークフローが依存関係のインストール、型チェック、ルーティングテスト、ビルドを実行し、`dist/` を公開します。手動で公開し直す場合は、同じワークフローの **Run workflow** で `main` を選びます。
+
+カスタムドメインを設定しない場合の公開URLは https://shuichi.github.io/ashihara-kurabayashi-lab/ です。以後は `main` へpushするたびに自動更新されます。`dist/` をGitに追加する必要はありません。
 
 アセットは相対パスで出力するため、`https://<user>.github.io/<repository>/`、ユーザーサイトのルート、カスタムドメインのいずれにも同じビルドを配置できます。設定方法の参考: [GitHub Pagesのカスタムワークフロー](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
@@ -44,8 +46,8 @@ GitHub Pagesでは次の手順で公開します。
 ## 内容の更新
 
 - `app/content.ts`: 日本語・英語の表示文言。研究テーマ、研究成果、メンバー、配属案内、FAQを両言語で更新します。
-- `app/publications.ts`: 論文・研究業績32件の書誌情報と出典リンク。
-- `components/publications-list.tsx`: 全32件の年別一覧と発表年へのページ内リンク。
+- `app/publications.ts`: 論文・研究業績36件の書誌情報と出典リンク。
+- `components/publications-list.tsx`: 全36件の年別一覧と発表年へのページ内リンク。
 - `app/page.tsx`: 研究室の概要と各ページへの入口。
 - `app/navigation.ts`: 7ページの共通メニュー、ページ案内、見出しの日英文言。
 - `app/main.tsx`: Reactの起動と7画面の対応表。すべてブラウザー内で描画します。
@@ -66,7 +68,7 @@ GitHub Pagesでは次の手順で公開します。
 
 研究の三本柱、研究テーマと5つの事例、教員紹介、関連業績、配属時に求めるスキル、研究室生活、成長ロードマップ、FAQ、教員へのメールリンクを掲載しています。内容は研究室提供の原稿を編集・英訳したものです。
 
-書誌情報は提供原稿に基づき、重複していたRayauthを1件に整理しています。原稿の改行・空白に起因するDOIやURLの表記崩れを修正し、掲載予定の論文はその状態を維持しています。2026年以前の関連業績も含み、すべてを新設研究室の在籍中の成果として扱うものではありません。論文タイトルと著者名は両言語で原文を保持しています。
+書誌情報は2026年9月に提供された最新の文献リスト全36件に基づきます。DOI・出典URL、発表日、巻号・ページ、ISBN・ISSN、百科事典の共同編集者の役割を原稿に合わせ、掲載予定の論文はその状態を維持しています。既存文献のIDは掲載順にかかわらず保持し、研究事例からの参照やページ内リンクを維持しています。2026年以前の関連業績も含み、すべてを新設研究室の在籍中の成果として扱うものではありません。論文タイトルと著者名は両言語で原文を保持しています。
 
 正式公開前に、`index.html` の `robots` 設定を公開方針に合わせて変更してください。現在はデザイン確認用のため `noindex, nofollow` です。
 
@@ -93,4 +95,4 @@ https://ipsj.ixsq.nii.ac.jp/records/30220
 
 `npm test` で、ルート／リポジトリー配下のURL、全7画面、ページ内目次、直接アクセス用ハッシュ、不明な画面・不正なエンコード、外部リンクの扱いを検証します。`npm run typecheck` と `npm run build` で型と静的出力を確認できます。実ブラウザーの操作・画面テストは未実施です。
 
-既存のSites向け設定は `.openai/hosting.json` に残し、同じ `dist/` を配信する静的構成に変更しています。GitHub Pagesでの公開にはSitesの契約・接続やサーバー機能は必要ありません。
+GitHub Pagesでの公開にはSitesの契約・接続やサーバー機能は必要ありません。
