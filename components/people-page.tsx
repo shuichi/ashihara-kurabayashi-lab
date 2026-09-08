@@ -6,6 +6,13 @@ import { PageHeader } from '@/components/page-header';
 import { ContactCallout } from '@/components/contact-callout';
 import { copy } from '@/app/content';
 import { navigation } from '@/app/navigation';
+import ashiharaPortrait from '@/assets/profile-ashihara.png?url';
+import kurabayashiPortrait from '@/assets/profile-kurabayashi.png?url';
+
+const portraits: Record<string, string> = {
+  'ashihara@rs.tus.ac.jp': ashiharaPortrait,
+  'shuichi@rs.tus.ac.jp': kurabayashiPortrait,
+};
 
 export function PeoplePage() {
   const { language } = useSite();
@@ -18,6 +25,15 @@ export function PeoplePage() {
         <div className="people-grid">
           {t.people.map((person) => (
             <article className="person" key={person.email}>
+              <img
+                className="person-portrait"
+                src={portraits[person.email]}
+                alt={person.name}
+                width={255}
+                height={312}
+                loading="lazy"
+                decoding="async"
+              />
               <p className="person-role">{person.role}</p>
               <h2>{person.name}</h2>
               <p

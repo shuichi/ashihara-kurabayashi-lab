@@ -238,6 +238,7 @@ h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.875rem, 3vw
 .project-links .text-link > span { font-size: .75rem; }
 .people-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-top: 44px; }
 .person { border-top: 1px solid var(--border); padding-top: 27px; display: flex; flex-direction: column; align-items: start; }
+.person-portrait { display: block; width: 255px; max-width: 100%; height: auto; flex-shrink: 0; margin-bottom: 24px; }
 .person-role { color: var(--primary); font-size: .875rem; letter-spacing: .06em; margin: 0 0 14px; }
 .person h2 { font-family: var(--serif); font-weight: 500; font-size: 2.25rem; letter-spacing: .06em; line-height: 1.6; margin: 0; }
 .person-translation { font-size: .875rem; color: var(--muted-foreground); letter-spacing: .065em; margin: 5px 0 25px; }
