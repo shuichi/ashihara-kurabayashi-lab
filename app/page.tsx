@@ -1,28 +1,20 @@
-'use client';
-
-import { PageLink } from '@/components/page-link';
-import { useState } from 'react';
-import { ArrowDown, ArrowRight, ArrowUpRight, Pause, Play } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { KnowledgeField } from '@/components/knowledge-field';
-import { ContactCallout } from '@/components/contact-callout';
-import { useSite } from '@/components/site-shell';
-import { copy } from './content';
-import { navigation, structureCopy } from './navigation';
+import { PageLink } from "@/components/page-link";
+import { ArrowDown, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
+import { KnowledgeField } from "@/components/knowledge-field";
+import { ContactCallout } from "@/components/contact-callout";
+import { useSite } from "@/components/site-shell";
+import { copy } from "./content";
+import { navigation, structureCopy } from "./navigation";
 
 export default function Home() {
-  const { language } = useSite();
-  const [paused, setPaused] = useState(false);
+  const { language, about } = useSite();
   const t = copy[language];
   const s = structureCopy[language];
   return (
     <>
-      <section
-        className={`hero ${paused ? 'is-paused' : ''}`}
-        aria-labelledby="hero-title"
-      >
+      <section className="hero is-paused" aria-labelledby="hero-title">
         <div className="hero-art">
-          <KnowledgeField paused={paused} />
+          <KnowledgeField />
         </div>
         <div className="container hero-content">
           <h1 id="hero-title">
@@ -50,21 +42,23 @@ export default function Home() {
             <span>{t.university}</span>
             <span>{t.faculty}</span>
           </div>
-          <PageLink href="#about" className="scroll-cue">
+          <PageLink href="#about" className="scroll-cue" aria-label={s.overview}>
             <span>{s.overview}</span>
             <ArrowDown size={16} />
           </PageLink>
-          <Button
-            variant="ghost"
-            size="icon"
+          <button
+            type="button"
             className="animation-control"
-            onClick={() => setPaused(!paused)}
-            aria-label={paused ? t.play : t.pause}
-            aria-pressed={paused}
-            title={paused ? t.play : t.pause}
+            data-motion-toggle=""
+            data-play-label={t.play}
+            data-pause-label={t.pause}
+            aria-label={t.pause}
+            aria-pressed="false"
+            hidden
           >
-            {paused ? <Play size={14} /> : <Pause size={14} />}
-          </Button>
+            <Play className="motion-play" size={16} aria-hidden="true" />
+            <Pause className="motion-pause" size={16} aria-hidden="true" />
+          </button>
         </div>
       </section>
       <div className="notice-bar">
@@ -73,11 +67,7 @@ export default function Home() {
           <p>{t.focus}</p>
         </div>
       </div>
-      <section
-        id="about"
-        className="section container about-section"
-        aria-labelledby="about-title"
-      >
+      <section id="about" className="section container about-section" aria-labelledby="about-title">
         <h2 id="about-title" className="home-section-title">
           {s.about}
         </h2>
@@ -87,10 +77,7 @@ export default function Home() {
               <span key={line}>{line}</span>
             ))}
           </p>
-          <div className="about-copy">
-            <p>{t.about}</p>
-            <p>{t.aboutNote}</p>
-          </div>
+          <div className="about-copy">{about}</div>
         </div>
         <div className="pillars-section">
           <h3 className="subsection-title">{t.pillarsTitle}</h3>

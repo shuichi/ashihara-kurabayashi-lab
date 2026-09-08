@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-08",
+  "pages": 7,
+  "languages": [
+    "ja",
+    "en"
+  ],
+  "publications": 36,
+  "assets": [
+    {
+      "type": "js",
+      "bytes": 341680,
+      "gzipBytes": 109212
+    },
+    {
+      "type": "css",
+      "bytes": 217532,
+      "gzipBytes": 34137
+    }
+  ],
+  "note": "Existing dist before migration. Gzip is locally calculated; these are not field performance measurements."
+}

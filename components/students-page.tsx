@@ -1,43 +1,31 @@
-'use client';
-
-import { ArrowDown } from 'lucide-react';
-import { PageLink } from '@/components/page-link';
-import { useSite } from '@/components/site-shell';
-import { PageHeader } from '@/components/page-header';
-import { ContactCallout } from '@/components/contact-callout';
-import { copy } from '@/app/content';
-import { navigation, structureCopy } from '@/app/navigation';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { ArrowDown } from "lucide-react";
+import { PageLink } from "@/components/page-link";
+import { useSite } from "@/components/site-shell";
+import { PageHeader } from "@/components/page-header";
+import { ContactCallout } from "@/components/contact-callout";
+import { copy } from "@/app/content";
+import { navigation, structureCopy } from "@/app/navigation";
 
 export function StudentsPage() {
   const { language } = useSite();
   const t = copy[language];
   const s = structureCopy[language];
-  const page = navigation[language].find((item) => item.href === '/students')!;
+  const page = navigation[language].find((item) => item.href === "/students")!;
   return (
     <div className="subpage students-page">
       <PageHeader
         title={page.label}
         intro={page.description}
         links={[
-          { href: '#skills', label: s.skills },
-          { href: '#fit', label: s.fit },
-          { href: '#requirements', label: s.requirements },
-          { href: '#life', label: s.life },
-          { href: '#roadmap', label: s.roadmap },
-          { href: '#faq', label: s.faq },
+          { href: "#skills", label: s.skills },
+          { href: "#fit", label: s.fit },
+          { href: "#requirements", label: s.requirements },
+          { href: "#life", label: s.life },
+          { href: "#roadmap", label: s.roadmap },
+          { href: "#faq", label: s.faq },
         ]}
       />
-      <section
-        id="skills"
-        className="students-section"
-        aria-labelledby="skills-title"
-      >
+      <section id="skills" className="students-section" aria-labelledby="skills-title">
         <div className="container section">
           <div className="students-heading">
             <h2 id="skills-title">{s.skills}</h2>
@@ -67,11 +55,7 @@ export function StudentsPage() {
         </div>
       </section>
 
-      <section
-        id="fit"
-        className="container section student-details"
-        aria-labelledby="fit-title"
-      >
+      <section id="fit" className="container section student-details" aria-labelledby="fit-title">
         <div className="fit-section">
           <div>
             <h2 id="fit-title">{s.fit}</h2>
@@ -141,21 +125,19 @@ export function StudentsPage() {
           <h2>{s.faq}</h2>
           <p className="section-intro">{t.faqIntro}</p>
         </div>
-        <Accordion className="faq-list" defaultValue={['question-0']}>
+        <div className="faq-list">
           {t.faq.map((item, i) => (
-            <AccordionItem value={`question-${i}`} key={i}>
-              <AccordionTrigger className="faq-question">
-                <span className="question-number">
-                  Q{String(i + 1).padStart(2, '0')}
-                </span>
+            <details className="faq-item" key={item.question} open={i === 0}>
+              <summary className="faq-question">
+                <span className="question-number">Q{String(i + 1).padStart(2, "0")}</span>
                 <span>{item.question}</span>
-              </AccordionTrigger>
-              <AccordionContent className="faq-answer">
+              </summary>
+              <div className="faq-answer">
                 <p>{item.answer}</p>
-              </AccordionContent>
-            </AccordionItem>
+              </div>
+            </details>
           ))}
-        </Accordion>
+        </div>
       </section>
       <ContactCallout />
     </div>

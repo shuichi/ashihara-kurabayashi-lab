@@ -1,0 +1,63 @@
+{
+  "researchTitle": "Small models.\nNew experiences.",
+  "researchIntro": "These are examples of topics available to undergraduate researchers. Use them as starting points for the questions you want to explore.",
+  "research": [
+    {
+      "label": "SMALL TRANSFORMERS",
+      "title": "Small Transformers",
+      "description": "Explore lightweight models for the actions and dialogue of game characters. Learn from play logs to estimate difficulty and reasons for player dropout, informing game balance and player experience."
+    },
+    {
+      "label": "DATA-CONSCIOUS GENERATION",
+      "title": "Image generation with limited data",
+      "description": "Investigate high-quality image generation using medium-sized datasets with verified rights and provenance, alongside synthesized data, without relying on unauthorized data collection."
+    },
+    {
+      "label": "WORLD MODELS",
+      "title": "World models & interactive AI",
+      "description": "Use approaches such as latent diffusion to predict changes in the world from video, images, and action sequences. Develop predictive and world-understanding models for games and interactive AI."
+    }
+  ],
+  "computeTitle": "Computing infrastructure for learning",
+  "computeText": "We use public supercomputers such as ABCI 3.0 at AIST and TSUBAME 4.0 at Institute of Science Tokyo. Our research connects distributed training with implementation in interactive systems.",
+  "projectsTitle": "Research in practice",
+  "projectsIntro": "Examples connecting AI, games, and interaction. These previous projects offer starting points for new research questions.",
+  "projects": [
+    {
+      "name": "Kinetics",
+      "label": "INTERACTION",
+      "title": "A gamepad controlled by finger tilting",
+      "description": "A mathematical model for an on-screen gamepad controlled by tilting a finger, exploring new possibilities for touch interaction.",
+      "publications": ["publication-20"]
+    },
+    {
+      "name": "Cymotion",
+      "label": "CHARACTER ANIMATION",
+      "title": "Characters that respond to their surroundings",
+      "description": "A next-generation animation system that retrieves and blends motion clips based on context, such as terrain and NPCs, to automatically select suitable character actions.",
+      "publications": ["publication-09", "publication-10"]
+    },
+    {
+      "name": "Learned PRNG",
+      "label": "GENERATIVE MODELS",
+      "title": "Learning to generate random numbers",
+      "description": "Train a generator from existing random numbers using WGAN-GP to produce outputs that pass the NIST test suite. Explore learned random number generation alongside manually designed algorithms.",
+      "publications": ["publication-08"]
+    },
+    {
+      "name": "Sketch2Map",
+      "label": "CREATIVITY SUPPORT",
+      "title": "From a hand-drawn sketch to a game map",
+      "description": "A two-stage pix2pix conditional GAN system that turns hand-drawn sketches into game maps. The work is also featured in the book Deep Learning in Gaming and Animations as an application of deep learning to games.",
+      "publications": ["publication-17"]
+    },
+    {
+      "name": "Rayauth",
+      "label": "VISION & AUTHENTICATION",
+      "title": "Authenticating cards through changing light",
+      "description": "Learn spatiotemporal changes in light caused by holograms and transparent ink structures on cards. Use a smartphone camera to distinguish genuine cards, counterfeits, and screen displays, exploring authentication without embedded chips.",
+      "publications": ["publication-02"]
+    }
+  ],
+  "relatedPaper": "Related paper"
+}

@@ -1,10 +1,8 @@
-'use client';
-
-import { PageLink } from '@/components/page-link';
-import { ArrowLeft, ArrowDown } from 'lucide-react';
-import { useSite } from './site-shell';
-import { pageCopy } from '@/app/page-content';
-import { structureCopy } from '@/app/navigation';
+import { PageLink } from "@/components/page-link";
+import { ArrowLeft, ArrowDown } from "lucide-react";
+import { useSite } from "./site-shell";
+import { pageCopy } from "@/app/page-content";
+import { structureCopy } from "@/app/navigation";
 
 export function PageHeader({
   title,
@@ -25,10 +23,7 @@ export function PageHeader({
       <h1>{title}</h1>
       <p className="section-intro">{intro}</p>
       {links.length > 0 && (
-        <nav
-          className="page-contents"
-          aria-label={structureCopy[language].contents}
-        >
+        <nav className="page-contents" aria-label={structureCopy[language].contents}>
           <p>{structureCopy[language].contents}</p>
           <ul>
             {links.map((link) => (

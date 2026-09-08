@@ -1,0 +1,61 @@
+{
+  "links": [
+    {
+      "href": "/",
+      "label": "Home",
+      "description": "Our lab and the ideas that guide our research and teaching."
+    },
+    {
+      "href": "/research",
+      "label": "Research",
+      "description": "Topics and projects in compact generative AI, distributed AI, games, and interaction."
+    },
+    {
+      "href": "/people",
+      "label": "Faculty",
+      "description": "Meet Eitoshi Ashihara and Shuichi Kurabayashi: research interests, backgrounds, and industry experience."
+    },
+    {
+      "href": "/publications",
+      "label": "Publications",
+      "description": "Browse publications by year, with bibliographic information and links to original sources."
+    },
+    {
+      "href": "/students",
+      "label": "For students",
+      "description": "What you will learn, what to bring, everyday research, and your path through the fourth year."
+    },
+    {
+      "href": "/access",
+      "label": "Access",
+      "description": "Find us on the fourth floor of Building 6 at the Noda Campus of Tokyo University of Science."
+    },
+    {
+      "href": "/contact",
+      "label": "Contact",
+      "description": "Get in touch about joining or visiting the lab, our research, and collaborations."
+    }
+  ],
+  "labels": {
+    "about": "About the lab",
+    "guide": "Explore the lab",
+    "guideIntro": "Find the information you need on each dedicated page.",
+    "focus": "Research areas",
+    "overview": "About the lab",
+    "contents": "On this page",
+    "themes": "Research topics",
+    "projects": "Research projects",
+    "computing": "Computing",
+    "skills": "Skills you will develop",
+    "fit": "Who we welcome",
+    "requirements": "Preparing to join",
+    "life": "Life in the lab",
+    "roadmap": "Your research journey",
+    "faq": "Frequently asked questions",
+    "years": "Browse by year",
+    "publicationCount": "publications",
+    "researchLink": "Explore our research",
+    "publicationsLink": "View all publications",
+    "studentsLink": "Explore the student guide"
+  }
+}

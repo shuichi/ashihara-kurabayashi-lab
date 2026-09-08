@@ -1,0 +1,29 @@
+{
+  "peopleTitle": "研究と実装をつなぐ、ふたり。",
+  "peopleIntro": "産業の現場と学術研究の両方から、AIを創るプロセスを指導します。",
+  "people": [
+    {
+      "name": "芦原 栄登士",
+      "englishName": "Eitoshi Ashihara",
+      "role": "客員教授",
+      "email": "ashihara@rs.tus.ac.jp",
+      "positions": ["株式会社Cygames 取締役CTO", "株式会社Cygames AI Studio 代表取締役"],
+      "specialty": "プログラミング言語処理系",
+      "bio": "東京理科大学卒業後、ゲーム業界でキャリアを開始。ネットワークゲーム開発、基盤構築・運用、技術組織マネジメントに従事。現在はCygamesの研究、インフラ、開発・運用を含むゲーム技術全般を統括する。Cygames AI Studioでは、生成AI時代の価値創出を支える技術基盤と事業戦略を牽引。"
+    },
+    {
+      "name": "倉林 修一",
+      "englishName": "Shuichi Kurabayashi",
+      "role": "教授",
+      "email": "shuichi@rs.tus.ac.jp",
+      "positions": [
+        "株式会社Cygames 技術顧問／Cygames Research 所長",
+        "株式会社Cygames AI Studio 取締役CRO"
+      ],
+      "specialty": "ビッグデータ処理技術、生成AI、UI技術",
+      "bio": "1979年生まれ。慶應義塾大学大学院政策・メディア研究科博士課程修了。博士（政策・メディア）。同大学環境情報学部専任講師を経て、2015年よりCygames。2026年より東京理科大学創域情報学部教授を兼任。研究者として、データ処理から生成AI、インターフェースまでを横断する。"
+    }
+  ],
+  "specialtyLabel": "専門分野",
+  "biography": "プロフィール"
+}

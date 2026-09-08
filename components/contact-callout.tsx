@@ -1,10 +1,8 @@
-'use client';
-
-import { PageLink } from '@/components/page-link';
-import { ArrowRight } from 'lucide-react';
-import { copy } from '@/app/content';
-import { pageCopy } from '@/app/page-content';
-import { useSite } from './site-shell';
+import { PageLink } from "@/components/page-link";
+import { ArrowRight } from "lucide-react";
+import { copy } from "@/app/content";
+import { pageCopy } from "@/app/page-content";
+import { useSite } from "./site-shell";
 
 export function ContactCallout() {
   const { language } = useSite();

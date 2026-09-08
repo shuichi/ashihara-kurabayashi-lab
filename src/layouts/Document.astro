@@ -1,0 +1,55 @@
+---
+import { pageHref, type Language, type PagePath } from '../../lib/navigation';
+import { indexable } from '../../config/site.mjs';
+import '../../app/globals.css';
+interface Props { language: Language; pathname: PagePath; title: string; description: string; notFound?: boolean }
+const { language, pathname, title, description, notFound = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(pageHref(pathname, language, base), Astro.site).href;
+const absolute = (path: string, lang: Language = language) => new URL(pageHref(path, lang, base), Astro.site).href;
+const image = new URL(`${base.replace(/\/$/, '')}/social.png`, Astro.site).href;
+const canIndex = import.meta.env.PROD && indexable && !notFound;
+const organization = { '@context': 'https://schema.org', '@type': 'Organization', name: '芦原・倉林研究室', alternateName: 'Ashihara-Kurabayashi Lab.', url: absolute('/', 'ja'), parentOrganization: { '@type': 'CollegeOrUniversity', name: 'Tokyo University of Science' } };
+---
+<!doctype html>
+<html lang={language} data-site-base={base}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={canIndex ? 'index, follow' : 'noindex, follow'} />
+    <title>{title}</title>
+    {!notFound && <>
+      <link rel="canonical" href={canonical} />
+      <link rel="alternate" hreflang="ja" href={absolute(pathname, 'ja')} />
+      <link rel="alternate" hreflang="en" href={absolute(pathname, 'en')} />
+      <link rel="alternate" hreflang="x-default" href={absolute(pathname, 'ja')} />
+      <meta property="og:url" content={canonical} />
+    </>}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ashihara-Kurabayashi Lab." />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={language === 'ja' ? 'ja_JP' : 'en_US'} />
+    <meta property="og:locale:alternate" content={language === 'ja' ? 'en_US' : 'ja_JP'} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ashihara-Kurabayashi Lab. — Tokyo University of Science" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="icon" type="image/svg+xml" href={`${base.replace(/\/$/, '')}/favicon.svg`} />
+    <script is:inline>
+      // Avoid a theme flash; an unavailable preference never blocks the page.
+      try { document.documentElement.classList.toggle('dark', localStorage.getItem('ak-theme') === 'dark'); } catch { /* Default: light. */ }
+    </script>
+    {!notFound && <script is:inline type="application/ld+json" set:html={JSON.stringify(organization).replace(/</g, '\\u003c')} />}
+  </head>
+  <body>
+    <slot />
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

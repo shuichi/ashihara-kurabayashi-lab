@@ -1,0 +1,112 @@
+{
+  "studentsTitle": ["From making things", "to making discoveries."],
+  "studentsIntro": "Design, implement, train, and evaluate your own models—and turn them into working systems. We welcome students who want to go beyond using existing AI.",
+  "studentsLink": "Read the FAQs",
+  "skillsTitle": "Four capabilities to develop here.",
+  "skills": [
+    {
+      "label": "DESIGN",
+      "title": "Build models",
+      "description": "Understand neural network architectures through small Transformers and latent diffusion models, then implement and improve them yourself."
+    },
+    {
+      "label": "TRAIN",
+      "title": "Run training",
+      "description": "Gain practical experience with automated data synthesis and distributed learning on public GPU clusters, developing the skills to carry research through."
+    },
+    {
+      "label": "EVALUATE",
+      "title": "Evaluate from multiple perspectives",
+      "description": "Assess not only accuracy, but also model size, response time, reproducibility, and usability to understand the value of an AI system."
+    },
+    {
+      "label": "COLLABORATE",
+      "title": "Achieve results together",
+      "description": "Discuss ideas with faculty, students, and researchers at other institutions. Bring different perspectives together to move research forward."
+    }
+  ],
+  "fitTitle": "For people who enjoy trial and error.",
+  "fitIntro": "We value persistence, independent thinking, initiative, and curiosity more than innate talent.",
+  "fit": [
+    "You investigate unfamiliar mathematics or code, experiment, and deepen your understanding step by step.",
+    "You want to understand why AI works and how to build it, engaging with the subject as a field of study.",
+    "You want to create across fields such as games, image generation, creativity support, and optimization.",
+    "You enjoy discussing ideas and making progress with others, as well as working independently."
+  ],
+  "requiredTitle": "What we ask you to bring",
+  "required": [
+    {
+      "title": "Basic Python skills",
+      "description": "Be able to write simple programs using variables, conditionals, functions, lists, and dictionaries. You do not need to know everything."
+    },
+    {
+      "title": "Persistence in solving problems",
+      "description": "Be willing to investigate errors and failures, isolate their causes, and keep moving forward."
+    },
+    {
+      "title": "Clear expression and careful understanding",
+      "description": "We place a strong emphasis on articulating your ideas precisely and fully, while accurately understanding what others mean."
+    }
+  ],
+  "notRequiredTitle": "What you can learn after joining",
+  "notRequired": [
+    "Operating large GPU clusters",
+    "Presenting at international conferences and writing papers",
+    "Advanced mathematics or fully developed expertise",
+    "Game development or implementing generative AI models"
+  ],
+  "notRequiredNote": "You do not need these experiences before joining. With curiosity and persistence, you will build them gradually through research.",
+  "lifeTitle": "Life in the lab",
+  "life": [
+    {
+      "title": "From small reproductions to your own questions",
+      "description": "Begin by reproducing experiments and reading existing implementations, then develop your own problem statements and improvements. Visits to research collaborators also bring knowledge from real-world practice into your work."
+    },
+    {
+      "title": "Let questions start the conversation",
+      "description": "Seminars include progress updates, technical discussions, design reviews, paper reading, and interpretation of experiments. Where appropriate, the work extends to partner discussions, external presentations, and demonstrations."
+    }
+  ],
+  "roadmapTitle": "Your path through undergraduate research.",
+  "roadmapIntro": "A guide to the fourth year. The pace and activities depend on your research topic and progress.",
+  "roadmap": [
+    {
+      "season": "Year 4 · Spring",
+      "label": "FOUNDATIONS",
+      "title": "Build your foundations",
+      "description": "Set up your environment, learn Python and PyTorch fundamentals, read prior work, and study existing implementations. Reproduce experiments and make small improvements until you can run your own investigations."
+    },
+    {
+      "season": "Year 4 · Summer–Autumn",
+      "label": "EXPLORATION",
+      "title": "Shape your own question",
+      "description": "Narrow your topic and plan experiments. Design models, datasets, and evaluation criteria, iterating until your ideas take shape as a research project."
+    },
+    {
+      "season": "Year 4 · Autumn–Winter",
+      "label": "COMMUNICATION",
+      "title": "Bring your findings together",
+      "description": "Analyze your results and complete your graduation research. Depending on the work, explore demonstrations, external presentations, and paper submissions."
+    }
+  ],
+  "faqTitle": "Before your first step.",
+  "faqIntro": "Answers to common concerns about joining the lab.",
+  "faq": [
+    {
+      "question": "Do I need to be good at mathematics?",
+      "answer": "You do not need to be an expert at the start. You will learn the mathematics your research requires by connecting it with implementation. What matters is a willingness to investigate and gradually understand unfamiliar ideas."
+    },
+    {
+      "question": "I am worried about reading papers in English.",
+      "answer": "Most people find it demanding at first. Rather than aiming for perfect understanding immediately, begin with the important figures, equations, and experimental settings, and build your reading skills over time."
+    },
+    {
+      "question": "I have used generative AI, but never built it.",
+      "answer": "That is exactly the stage we welcome. Starting with basic Python skills, you will gain experience designing, implementing, and training models. Our focus is helping you progress from an AI user to an AI developer."
+    },
+    {
+      "question": "How do I know whether research is right for me?",
+      "answer": "You do not have to arrive thinking like an experienced researcher. By building small things, testing ideas, and gradually going deeper, you can discover topics and ways of working that suit you."
+    }
+  ]
+}

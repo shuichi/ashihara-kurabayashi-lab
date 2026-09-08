@@ -1,0 +1,15 @@
+---
+import Document from '../layouts/Document.astro';
+import { pageHref } from '../../lib/navigation';
+const home = pageHref('/', 'ja', import.meta.env.BASE_URL);
+const english = pageHref('/', 'en', import.meta.env.BASE_URL);
+---
+<Document language="ja" pathname="/" title="ページが見つかりません | 芦原・倉林研究室" description="指定されたページは見つかりませんでした。研究室のホームページからお探しください。" notFound>
+  <main id="main" class="container error-page" tabindex="-1">
+    <p class="eyebrow">404</p>
+    <h1>ページが見つかりません</h1>
+    <p>URLをご確認いただくか、ホームページからお探しください。</p>
+    <p lang="en">This page could not be found. Please check the address or visit our home page.</p>
+    <nav aria-label="ホーム / Home"><a class="primary-link" href={home}>日本語のホームへ</a><a class="text-link" lang="en" href={english}>English home</a></nav>
+  </main>
+</Document>

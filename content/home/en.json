@@ -1,0 +1,27 @@
+{
+  "title": ["From using AI", "to creating it."],
+  "intro": "Small, efficient AI that acts autonomously.",
+  "description": "Design, train, evaluate—and bring your models to life.",
+  "primary": "Explore our research",
+  "secondary": "For prospective students",
+  "focus": "Small generative models / Autonomous distributed AI / Games & interactive systems",
+  "aboutTitle": ["Build it. Run it.", "Understand it."],
+  "pillarsTitle": "Three pillars of education and research in our lab.",
+  "pillars": [
+    {
+      "label": "BUILD FROM SCRATCH",
+      "title": "Create your own generative AI.",
+      "description": "Design and implement models using our small Transformer implementations and latent diffusion models planned for release. Explore compact, practical generative AI with applications in industry."
+    },
+    {
+      "label": "RESEARCH MEETS PRACTICE",
+      "title": "Learn from research and industry.",
+      "description": "Receive direct guidance from the CTO of Cygames and the director of Cygames Research. Connect model design, training infrastructure, evaluation, and deployment through experience in AI research and large-scale services."
+    },
+    {
+      "label": "GLOBAL COLLABORATION",
+      "title": "Connect your research to the world.",
+      "description": "Participate in collaborations with institutions including UC San Diego, Tokyo University of the Arts, Institute of Science Tokyo, and Keio University. Work with researchers in Japan and abroad, with the aim of submitting to international conferences."
+    }
+  ]
+}

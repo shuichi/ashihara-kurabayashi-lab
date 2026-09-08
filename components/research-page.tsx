@@ -1,35 +1,29 @@
-'use client';
-
-import { PageLink } from '@/components/page-link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { useSite } from '@/components/site-shell';
-import { PageHeader } from '@/components/page-header';
-import { ContactCallout } from '@/components/contact-callout';
-import { copy } from '@/app/content';
-import { navigation, structureCopy } from '@/app/navigation';
-import { publications } from '@/app/publications';
+import { PageLink } from "@/components/page-link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useSite } from "@/components/site-shell";
+import { PageHeader } from "@/components/page-header";
+import { ContactCallout } from "@/components/contact-callout";
+import { copy } from "@/app/content";
+import { navigation, structureCopy } from "@/app/navigation";
+import { publications } from "@/app/publications";
 
 export function ResearchPage() {
   const { language } = useSite();
   const t = copy[language];
   const s = structureCopy[language];
-  const page = navigation[language].find((item) => item.href === '/research')!;
+  const page = navigation[language].find((item) => item.href === "/research")!;
   return (
     <div className="subpage research-page">
       <PageHeader
         title={page.label}
         intro={page.description}
         links={[
-          { href: '#themes', label: s.themes },
-          { href: '#projects', label: s.projects },
-          { href: '#computing', label: s.computing },
+          { href: "#themes", label: s.themes },
+          { href: "#projects", label: s.projects },
+          { href: "#computing", label: s.computing },
         ]}
       />
-      <section
-        id="themes"
-        className="research-section"
-        aria-labelledby="themes-title"
-      >
+      <section id="themes" className="research-section" aria-labelledby="themes-title">
         <div className="container section">
           <div className="research-heading">
             <h2 id="themes-title">{s.themes}</h2>
@@ -70,9 +64,7 @@ export function ResearchPage() {
                     <p>{project.description}</p>
                     <div className="project-links">
                       {project.publications.map((id) => {
-                        const paper = publications.find(
-                          (item) => item.id === id,
-                        );
+                        const paper = publications.find((item) => item.id === id);
                         return paper?.url ? (
                           <a
                             href={paper.url}
@@ -80,7 +72,7 @@ export function ResearchPage() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-link"
-                            aria-label={t.relatedPaper + ': ' + paper.title}
+                            aria-label={t.relatedPaper + ": " + paper.title}
                           >
                             {t.relatedPaper}
                             <span>{paper.year}</span>

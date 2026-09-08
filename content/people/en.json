@@ -1,0 +1,32 @@
+{
+  "peopleTitle": "Connecting research and implementation.",
+  "peopleIntro": "Learn the process of creating AI through experience in both academic research and industry.",
+  "people": [
+    {
+      "name": "Eitoshi Ashihara",
+      "englishName": "芦原 栄登士",
+      "role": "Visiting Professor",
+      "email": "ashihara@rs.tus.ac.jp",
+      "positions": [
+        "Director & CTO, Cygames, Inc.",
+        "Representative Director, Cygames AI Studio, Inc."
+      ],
+      "specialty": "Programming language implementation",
+      "bio": "After graduating from Tokyo University of Science, he began his career in games, working on network game development, infrastructure, operations, and technical organization management. At Cygames, he oversees game technology spanning research, infrastructure, development, and operations. At Cygames AI Studio, he leads the technical foundations and business strategy for creating value in the generative AI era."
+    },
+    {
+      "name": "Shuichi Kurabayashi",
+      "englishName": "倉林 修一",
+      "role": "Professor",
+      "email": "shuichi@rs.tus.ac.jp",
+      "positions": [
+        "Technical Advisor, Cygames, Inc. / Director, Cygames Research",
+        "Director & CRO (Chief Research Officer), Cygames AI Studio, Inc."
+      ],
+      "specialty": "Big data processing, generative AI, and user interfaces",
+      "bio": "Born in 1979. He earned his doctorate from the Graduate School of Media and Governance at Keio University. After serving as a full-time lecturer in its Faculty of Environment and Information Studies, he joined Cygames in 2015. Since 2026, he has also held a professorship at Tokyo University of Science, working across data processing, generative AI, and user interfaces."
+    }
+  ],
+  "specialtyLabel": "Research interests",
+  "biography": "Biography"
+}

@@ -1,21 +1,17 @@
-'use client';
-
-import { PageLink } from '@/components/page-link';
-import { ArrowRight } from 'lucide-react';
-import { useSite } from './site-shell';
-import { PageHeader } from './page-header';
-import { PublicationsList, publicationYears } from './publications-list';
-import { copy } from '@/app/content';
-import { publications } from '@/app/publications';
-import { navigation, structureCopy } from '@/app/navigation';
+import { PageLink } from "@/components/page-link";
+import { ArrowRight } from "lucide-react";
+import { useSite } from "./site-shell";
+import { PageHeader } from "./page-header";
+import { PublicationsList, publicationYears } from "./publications-list";
+import { copy } from "@/app/content";
+import { publications } from "@/app/publications";
+import { navigation, structureCopy } from "@/app/navigation";
 
 export function PublicationsPage() {
   const { language } = useSite();
   const t = copy[language];
   const s = structureCopy[language];
-  const page = navigation[language].find(
-    (item) => item.href === '/publications',
-  )!;
+  const page = navigation[language].find((item) => item.href === "/publications")!;
   return (
     <div className="subpage publications-page">
       <PageHeader title={page.label} intro={t.publicationsIntro} />
@@ -30,7 +26,7 @@ export function PublicationsPage() {
           {publicationYears.map((year) => (
             <PageLink href={`#year-${year}`} key={year}>
               {year}
-              {language === 'ja' && '年'}
+              {language === "ja" && "年"}
             </PageLink>
           ))}
         </nav>

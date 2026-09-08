@@ -2,97 +2,117 @@
 
 Ashihara-Kurabayashi Lab. — 東京理科大学 創域情報学部 情報理工学科。
 
-研究室提供の原稿をもとにした、日本語・英語対応の研究室ホームページです。
+日本語・英語の研究室サイトです。Astroで14ページを静的HTMLに生成し、GitHub Pagesで公開します。Reactはビルド時のテンプレートに使用し、ブラウザーでのReact起動・hydrationは行いません。公開先にNode.js、SSR、API、データベースは不要です。
 
-## 開発
+## 開発と確認
 
-Node.js 22.13 以降を使用します。
+Node.js 24以降を使用します。CIはNode.js 24です。
 
 ```sh
 npm ci
 npm run dev
 ```
 
+開発URLは起動ログを確認してください。既定のパスは `/ashihara-kurabayashi-lab/` です。
+
 ```sh
-npm run build
-npx tsc --noEmit
+npm run typecheck
+npm run lint
 npm test
+npm run build
+npx playwright install chromium firefox webkit
+npm run test:browser
+npm run preview:static
 ```
 
-React / TypeScript / Vite を使用した静的SPAです。開発時のURLは起動時に表示されます。
+`npm run preview:static` はビルド済み `dist/` を `http://127.0.0.1:4322/ashihara-kurabayashi-lab/` で確認するためのローカルツールです。存在しないURLは404を返し、SPA向けのフォールバックは行いません。`npm run preview` でもAstroのプレビューを利用できます。これらのプロセスは公開サイトには配置しません。
 
-## 静的ビルドとGitHub Pagesへの公開
+## URLと検索対応
+
+| ページ       | 日本語（公開ベースパスから） | 英語                |
+| ------------ | ---------------------------- | ------------------- |
+| ホーム       | `/`                          | `/en/`              |
+| 研究紹介     | `/research/`                 | `/en/research/`     |
+| 教員紹介     | `/people/`                   | `/en/people/`       |
+| 研究実績     | `/publications/`             | `/en/publications/` |
+| 配属案内     | `/students/`                 | `/en/students/`     |
+| アクセス     | `/access/`                   | `/en/access/`       |
+| お問い合わせ | `/contact/`                  | `/en/contact/`      |
+
+各ページは直接アクセス・再読み込みできます。言語はURLで決まり、言語切り替えは同じページと見出しへのリンクです。保存済みの言語設定で別のURLへ自動転送しません。
+
+旧ブックマーク `#/research#projects` などは、少量のJavaScriptで `/research/#projects` に置き換えます。旧URL移行のみJavaScriptが必要です。本文、通常のページ移動、FAQ、モバイルメニューはJavaScriptを無効にしても利用できます。存在しないURLには `404.html` を表示します。
+
+ページごとのtitle、description、canonical、日英とx-defaultのhreflang、OGP、構造化データ、`sitemap.xml`、共有画像 `social.png` を出力します。研究室全体の構造化データを使用し、未確認の個人属性や論文情報は追加していません。
+
+開発モードと404はnoindexです。**本番ビルドは既定で `index, follow`** になります。確認用サイトを公開する場合はビルド時に `SITE_INDEXABLE=false` を指定してください。これはアクセス制限ではなく検索エンジンへの指示です。プロジェクト配下のサイトからドメイン直下の `robots.txt` は管理できないため、ページ内のmetaを用います。必要に応じて公開後にサイトマップをSearch Consoleへ登録してください。
+
+## GitHub Pagesへの公開
+
+1. [Pages設定](https://github.com/shuichi/ashihara-kurabayashi-lab/settings/pages)で **Build and deployment → Source → GitHub Actions** を選びます。
+2. Pull requestを作成すると、型・Lint・内容・静的出力・3種類のブラウザーでの操作とアクセシビリティを検証します。
+3. `main` へのpush、または `main` を選んだ手動実行で、全チェックに合格した `dist/` だけを公開します。
+
+公開URLは [芦原・倉林研究室](https://shuichi.github.io/ashihara-kurabayashi-lab/) です。`dist/` はGit管理しません。ワークフローは検証とデプロイを分離し、Pagesへの書き込み権限はデプロイジョブに限定しています。PRから公開することはありません。
+
+公開先を変える場合は、リポジトリーの **Settings → Secrets and variables → Actions → Variables** で次の変数を設定します。秘密情報は不要です。
+
+| 変数             | 既定値                      | 設定例                                      |
+| ---------------- | --------------------------- | ------------------------------------------- |
+| `SITE_URL`       | `https://shuichi.github.io` | `https://lab.example.org`（パスを含めない） |
+| `SITE_BASE`      | `/ashihara-kurabayashi-lab` | ルート公開なら `/`                          |
+| `SITE_INDEXABLE` | `true`                      | 検索対象外の確認用公開は `false`            |
+
+カスタムドメインではGitHub Pages側のドメイン・DNS・HTTPS設定も必要です。ベースパスや公開先を変更したら再ビルドします。同じHTMLを別パスにそのまま移す方式ではありません。ローカルではシェルの環境変数で指定します（`.env` の自動読み込みは使用しません）。
 
 ```sh
-npm run build
+SITE_URL=https://lab.example.org SITE_BASE=/ SITE_INDEXABLE=false npm run build
 ```
 
-`dist/` に `index.html`、JavaScript、CSS、`.nojekyll` が生成されます。このディレクトリーの内容をそのまま静的ホスティングに配置できます。公開環境にはNode.js、Cloudflare Workers、SSR、APIサーバーは不要です。
+誤った更新を戻す場合は、該当コミットをrevertするPRを作り、検証後に `main` へマージします。検証済みの以前の内容が再生成・再公開されます。失敗したチェックからはデプロイされないため、公開済みサイトは維持されます。
 
-GitHub Pagesでは次の手順で公開します。
+## 内容を更新する場所
 
-1. [リポジトリーのPages設定](https://github.com/shuichi/ashihara-kurabayashi-lab/settings/pages)で **Build and deployment → Source** を **GitHub Actions** に設定します。
-2. 変更を `main` ブランチへpushします。別のブランチから公開する場合は `.github/workflows/pages.yml` の `on.push.branches` を変更してください。
-3. [Actions画面](https://github.com/shuichi/ashihara-kurabayashi-lab/actions)の **Deploy to GitHub Pages** が成功すると公開完了です。ワークフローが依存関係のインストール、型チェック、ルーティングテスト、ビルドを実行し、`dist/` を公開します。手動で公開し直す場合は、同じワークフローの **Run workflow** で `main` を選びます。
+| 対象                          | ファイル                                                 |
+| ----------------------------- | -------------------------------------------------------- |
+| 概要の本文                    | `content/about/ja.md`・`en.md`                           |
+| トップページの見出し・三本柱  | `content/home/ja.json`・`en.json`                        |
+| 研究テーマ・設備・事例        | `content/research/ja.json`・`en.json`                    |
+| 教員紹介・経歴・メール        | `content/people/ja.json`・`en.json`                      |
+| 論文の書誌情報                | `content/publications.json`（日英で共有）                |
+| 研究実績ページの表示文言      | `content/publications/ja.json`・`en.json`                |
+| 配属案内・研究室生活・FAQ     | `content/students/ja.json`・`en.json`                    |
+| 所在地・問い合わせの表示文言  | `content/pages/ja.json`・`en.json`                       |
+| 共通文言／メニュー            | `content/common/`・`content/navigation/`                 |
+| 地図の検索語・既存フォームURL | `content/site.json`                                      |
+| 教員写真の原本                | `assets/profile-ashihara.png`・`profile-kurabayashi.png` |
 
-カスタムドメインを設定しない場合の公開URLは https://shuichi.github.io/ashihara-kurabayashi-lab/ です。以後は `main` へpushするたびに自動更新されます。`dist/` をGitに追加する必要はありません。
+日英の同じ項目を一緒に更新し、`npm test` と `npm run build` を実行してください。Markdown冒頭の `language` はファイル名と一致させます。JSONの型、空文字、日英の項目・件数の不一致、論文IDの重複、研究事例からの参照切れはビルド時に検出します。
 
-アセットは相対パスで出力するため、`https://<user>.github.io/<repository>/`、ユーザーサイトのルート、カスタムドメインのいずれにも同じビルドを配置できます。設定方法の参考: [GitHub Pagesのカスタムワークフロー](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
+論文を追加する場合は一意の `id` を付け、既存のIDは変更しないでください。新しい年は自動的に一覧へ加わります。出典のない掲載予定論文は `url: null` と `forthcoming: true` にできます。元の36件の書誌情報、著者、出典、掲載予定の状態、研究事例からの参照を保持しています。以前の所属時の業績も含み、すべてを新設研究室の在籍中の成果として扱うものではありません。
 
-内部の画面切り替えは `#/research` のようなURLのハッシュ変更をReactが検知し、DOMのみを更新します。全画面のコードは初回に読み込むため、切り替え時のHTML・データ取得はありません。ページ内目次は `#/research#projects`、研究実績の年は `#/publications#year-2026` の形式です。URLの共有、直接アクセス、再読み込み、ブラウザーの戻る・進むに対応し、サーバーのリライト設定や404ページによる転送は不要です。旧形式の `/research` などは使用せず、リンクをハッシュ形式へ更新してください。
+元の原稿に基づく研究内容を維持しています。所属の英語表記は[東京理科大学の公式案内](https://www.tus.ac.jp/en/fac/ist/ist/)、芦原栄登士氏の英語氏名は[情報処理学会の著者表記](https://ipsj.ixsq.nii.ac.jp/records/30220)を参照しています。
 
-ビルド結果を手元で確認する場合は `npm run preview`（または `npm start`）を実行します。これは確認用の静的配信で、公開サイトの実行に必要なサーバーではありません。HTMLを `file://` で直接開く方式には対応していません。
+## 表示・プライバシー・保守
 
-## 内容の更新
+- 既存の配色、明朝系の見出し、波形の意匠と日英の本文を継承しています。フォントは端末内のフォントを使用します。
+- 写真はビルド時にAVIF/WebPへ変換し、寸法を指定して遅延読み込みします。
+- ライト／ダークの選択だけをlocalStorageに保存します。保存を禁止したブラウザーでもページは動作します。
+- 波形はトップページのみで動かし、停止ボタン、OSの動きを減らす設定、画面外・バックグラウンドでの停止に対応します。
+- 地図・フォームはボタンを押すまでGoogleへ接続しません。住所、直接開くリンク、教員へのメールは埋め込みなしでも利用できます。Googleフォームの質問や送信先は変更していません。
+- フォーカス表示、スキップリンク、キーボード操作、狭い画面、拡大文字、印刷に対応します。モバイルメニューとFAQはHTMLの `details` / `summary` です。
+- 未使用のUIコンポーネント、Tailwind、旧SPAルーターを削除しました。依存バージョンとActionsのコミットを固定し、Dependabotが更新PRを作成します。更新はテスト後に取り込みます。
 
-- `app/content.ts`: 日本語・英語の表示文言。研究テーマ、研究成果、メンバー、配属案内、FAQを両言語で更新します。
-- `app/publications.ts`: 論文・研究業績36件の書誌情報と出典リンク。
-- `components/publications-list.tsx`: 全36件の年別一覧と発表年へのページ内リンク。
-- `app/page.tsx`: 研究室の概要と各ページへの入口。
-- `app/navigation.ts`: 7ページの共通メニュー、ページ案内、見出しの日英文言。
-- `app/main.tsx`: Reactの起動と7画面の対応表。すべてブラウザー内で描画します。
-- `components/research-page.tsx`: 研究テーマ、計算環境、5つの研究事例。
-- `components/people-page.tsx`: 教員の専門分野、経歴、連絡先。
-- `components/publications-page.tsx`: 年別の研究実績。
-- `components/students-page.tsx`: 配属案内、研究室生活、卒業研究の進め方、FAQ。
-- `components/page-header.tsx`: 各ページの明確なタイトルとページ内目次。
-- `components/page-link.tsx`: 内部リンクとページ内リンクをハッシュ形式へ変換します。外部リンクは通常のリンクのままです。
-- `components/spa-router.tsx` / `lib/spa-navigation.ts`: ハッシュの解析と変更検知、画面切り替え後のスクロール・フォーカス制御。
-- `components/site-shell.tsx`: 全ページ共通のナビゲーション、フッター、テーマ・言語の切り替え。
-- `components/access-page.tsx`: 所在地とGoogleマップ。
-- `components/contact-page.tsx`: 指定Googleフォームの埋め込み。
-- `app/page-content.ts`: アクセス・お問い合わせの日英文言、所在地、フォームURL。
-- `components/knowledge-field.tsx`: 波形が連続して変化するSVGアニメーション。
-- `app/globals.css`: 配色、文字、余白、レスポンシブ表示。`:root` と `.dark` がテーマの定義です。
-- `index.html`: 初期タイトル、説明文、初期テーマ、検索エンジン向け設定。表示中の画面と言語に応じて `components/site-shell.tsx` がタイトルと説明文を更新します。
+レイアウトは `components/`、ルート生成は `src/pages/[...page].astro`、メタ情報は `src/layouts/Document.astro`、CSSは `app/globals.css` です。`src/scripts/` はテーマ・旧URL互換・埋め込み・波形の操作だけを担当します。`sitemap.xml.ts` と `social.png.ts` はビルド時にファイルを生成し、公開先では実行されません。APIキーや秘密情報をフロントエンドへ埋め込まないでください。
 
-研究の三本柱、研究テーマと5つの事例、教員紹介、関連業績、配属時に求めるスキル、研究室生活、成長ロードマップ、FAQ、教員へのメールリンクを掲載しています。内容は研究室提供の原稿を編集・英訳したものです。
+## 検証と性能
 
-書誌情報は2026年9月に提供された最新の文献リスト全36件に基づきます。DOI・出典URL、発表日、巻号・ページ、ISBN・ISSN、百科事典の共同編集者の役割を原稿に合わせ、掲載予定の論文はその状態を維持しています。既存文献のIDは掲載順にかかわらず保持し、研究事例からの参照やページ内リンクを維持しています。2026年以前の関連業績も含み、すべてを新設研究室の在籍中の成果として扱うものではありません。論文タイトルと著者名は両言語で原文を保持しています。
+`npm run build` は全14ページのHTML、内部リンク・見出し、36件の書誌情報、canonical・hreflang・サイトマップ・404を検査します。ブラウザーに配信するJavaScriptは各ページgzip換算8 KiB以下、CSSは12 KiB以下を予算とし、超過すると失敗します。JSON-LDは実行スクリプトの予算から除外します。Astroが生成する未参照のReactクライアント用ファイルは読み込まれません。
 
-正式公開前に、`index.html` の `robots` 設定を公開方針に合わせて変更してください。現在はデザイン確認用のため `noindex, nofollow` です。
+PlaywrightはChromium、Firefox、WebKitの60ケースを検証します。axeによるWCAG 2.2 AA関連の自動検査に加え、キーボード操作、直接アクセス、404、旧URL、JavaScript無効、埋め込み、画面幅320–1440px、文字200%での横はみ出しを確認します。これはアクセシビリティ適合の認証や、実機の全組み合わせの保証ではありません。公開後の利用者による確認も続けてください。
 
-所属の英語表記は東京理科大学の公式ページに基づきます。
-https://www.tus.ac.jp/en/fac/ist/ist/
+```sh
+npm run test:performance
+```
 
-芦原栄登士氏の英語氏名は情報処理学会の著者表記を確認しています。
-https://ipsj.ixsq.nii.ac.jp/records/30220
-
-## 表示と操作
-
-- 日本語・英語の切り替えと端末内への設定保存。
-- 初回はOS設定にかかわらずライトテーマ。ユーザーが選択したライト／ダークテーマは端末内に保存。
-- 背景動画を使用しない、SVGとCSSによる穏やかな無限ループ。
-- アニメーションの一時停止と `prefers-reduced-motion` への対応。
-- モバイルメニュー、キーボード操作に対応するFAQ、本文へのスキップリンク。
-- `#/research`・`#/people`・`#/publications`・`#/students`: 情報ごとに切り替える画面。日本語ではナビゲーションと見出しも日本語で表示します。
-- `#/access`: 東京理科大学野田キャンパス6号館4Fの住所とGoogleマップ。
-- `#/contact`: 研究室指定のGoogleフォーム。質問文は元フォームの表記を保持し、周辺の案内とGoogle標準UIは日英を切り替えます。
-- 地図・フォームはGoogleから読み込みます。表示できない環境向けに外部で直接開くリンクも用意しています。
-- ロゴ画像、架空の研究実績、未確定の連絡先は使用していません。
-
-## 確認
-
-`npm test` で、ルート／リポジトリー配下のURL、全7画面、ページ内目次、直接アクセス用ハッシュ、不明な画面・不正なエンコード、外部リンクの扱いを検証します。`npm run typecheck` と `npm run build` で型と静的出力を確認できます。実ブラウザーの操作・画面テストは未実施です。
-
-GitHub Pagesでの公開にはSitesの契約・接続やサーバー機能は必要ありません。
+Chromiumでモバイル幅・CPU4倍スロットリング・下り1.6Mbps・遅延150ms・毎回キャッシュなしの3回測定を行い、`test-results/performance.json` に保存します。以前の静的ビルドを比較する場合は `BASELINE_DIST=/path/to/old/dist` を指定します。ローカル計測のLCP・CLS・長いタスクを記録し、実利用者のINPやCore Web Vitals合格を推定するものではありません。今回の比較と検証記録は `docs/verification.md` を参照してください。

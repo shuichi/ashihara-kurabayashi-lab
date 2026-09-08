@@ -1,0 +1,141 @@
+{
+  "measuredAt": "2026-09-08T12:28:22.034Z",
+  "browser": "153.0.8010.12",
+  "conditions": {
+    "viewport": "390×844",
+    "deviceScaleFactor": 3,
+    "cpuSlowdown": 4,
+    "downloadMbps": 1.6,
+    "uploadMbps": 0.75,
+    "latencyMs": 150,
+    "cache": "cold context per run",
+    "observation": "2 seconds after load",
+    "runs": 3
+  },
+  "note": "Local Chromium lab measurements; not field Core Web Vitals, INP, or a Lighthouse score.",
+  "results": [
+    {
+      "target": "baseline",
+      "median": {
+        "lcpMs": 1272,
+        "fcpMs": 1272,
+        "cls": 0,
+        "longTaskMs": 187,
+        "inlineJavaScriptGzipBytes": 174
+      },
+      "samples": [
+        {
+          "lcpMs": 1272,
+          "cls": 0,
+          "longTaskMs": 195,
+          "fcpMs": 1272,
+          "resources": [
+            {
+              "name": "/ashihara-kurabayashi-lab/assets/index-BM1tMFTS.js",
+              "type": "script",
+              "encodedBytes": 109212
+            },
+            {
+              "name": "/ashihara-kurabayashi-lab/assets/index-CE0Nj_e2.css",
+              "type": "link",
+              "encodedBytes": 34137
+            }
+          ],
+          "inlineJavaScriptGzipBytes": 174
+        },
+        {
+          "lcpMs": 1280,
+          "cls": 0,
+          "longTaskMs": 182,
+          "fcpMs": 1280,
+          "resources": [
+            {
+              "name": "/ashihara-kurabayashi-lab/assets/index-BM1tMFTS.js",
+              "type": "script",
+              "encodedBytes": 109212
+            },
+            {
+              "name": "/ashihara-kurabayashi-lab/assets/index-CE0Nj_e2.css",
+              "type": "link",
+              "encodedBytes": 34137
+            }
+          ],
+          "inlineJavaScriptGzipBytes": 174
+        },
+        {
+          "lcpMs": 1268,
+          "cls": 0,
+          "longTaskMs": 187,
+          "fcpMs": 1268,
+          "resources": [
+            {
+              "name": "/ashihara-kurabayashi-lab/assets/index-BM1tMFTS.js",
+              "type": "script",
+              "encodedBytes": 109212
+            },
+            {
+              "name": "/ashihara-kurabayashi-lab/assets/index-CE0Nj_e2.css",
+              "type": "link",
+              "encodedBytes": 34137
+            }
+          ],
+          "inlineJavaScriptGzipBytes": 174
+        }
+      ]
+    },
+    {
+      "target": "current",
+      "median": {
+        "lcpMs": 468,
+        "fcpMs": 468,
+        "cls": 0,
+        "longTaskMs": 0,
+        "inlineJavaScriptGzipBytes": 2250
+      },
+      "samples": [
+        {
+          "lcpMs": 472,
+          "cls": 0,
+          "longTaskMs": 0,
+          "fcpMs": 472,
+          "resources": [
+            {
+              "name": "/ashihara-kurabayashi-lab/_astro/Document.CzYsSfSy.css",
+              "type": "link",
+              "encodedBytes": 7394
+            }
+          ],
+          "inlineJavaScriptGzipBytes": 2250
+        },
+        {
+          "lcpMs": 468,
+          "cls": 0,
+          "longTaskMs": 0,
+          "fcpMs": 468,
+          "resources": [
+            {
+              "name": "/ashihara-kurabayashi-lab/_astro/Document.CzYsSfSy.css",
+              "type": "link",
+              "encodedBytes": 7394
+            }
+          ],
+          "inlineJavaScriptGzipBytes": 2250
+        },
+        {
+          "lcpMs": 460,
+          "cls": 0,
+          "longTaskMs": 0,
+          "fcpMs": 460,
+          "resources": [
+            {
+              "name": "/ashihara-kurabayashi-lab/_astro/Document.CzYsSfSy.css",
+              "type": "link",
+              "encodedBytes": 7394
+            }
+          ],
+          "inlineJavaScriptGzipBytes": 2250
+        }
+      ]
+    }
+  ]
+}

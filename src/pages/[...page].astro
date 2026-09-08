@@ -1,0 +1,36 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import { getImage } from 'astro:assets';
+import type { GetStaticPaths } from 'astro';
+import HomeMotion from '../components/HomeMotion.astro';
+import Document from '../layouts/Document.astro';
+import SitePage from '../../components/site-page';
+import { languages, pagePaths,  } from '../../lib/navigation';
+import { navigation } from '../../app/navigation';
+import ashihara from '../../assets/profile-ashihara.png';
+import kurabayashi from '../../assets/profile-kurabayashi.png';
+export const getStaticPaths = (async () => {
+  await Promise.all([getCollection('home'), getCollection('research'), getCollection('people'), getCollection('publications'), getCollection('students'), getCollection('common'), getCollection('pages'), getCollection('navigation'), getCollection('bibliography'), getCollection('about')]);
+  return languages.flatMap(language => pagePaths.map(pathname => ({
+    params: { page: [language === 'en' ? 'en' : '', pathname.slice(1)].filter(Boolean).join('/') || undefined },
+    props: { language, pathname },
+  })));
+}) satisfies GetStaticPaths;
+const { language, pathname } = Astro.props;
+const info = navigation[language].find(page => page.href === pathname)!;
+const name = language === 'ja' ? '芦原・倉林研究室 | 東京理科大学' : 'Ashihara-Kurabayashi Lab. | Tokyo University of Science';
+const title = pathname === '/' ? name : `${info.label} | ${name}`;
+const about = pathname === '/' ? await getEntry('about', language) : undefined;
+const renderedAbout = about ? await render(about) : undefined;
+const About = renderedAbout?.Content;
+const portraits = Object.fromEntries(await Promise.all(
+  (pathname === '/people' ? [['ashihara@rs.tus.ac.jp', ashihara], ['shuichi@rs.tus.ac.jp', kurabayashi]] as const : []).map(async ([email, src]) => {
+    const [webp, avif] = await Promise.all([getImage({ src, format: 'webp', width: 510, quality: 80 }), getImage({ src, format: 'avif', width: 510, quality: 65 })]);
+    return [email, { src: webp.src, webp: webp.src, avif: avif.src, width: 255, height: 312 }];
+  }),
+));
+---
+<Document language={language} pathname={pathname} title={title} description={info.description}>
+  <SitePage language={language} pathname={pathname} base={import.meta.env.BASE_URL} portraits={portraits}>{About && <About slot="about" />}</SitePage>
+  {pathname === '/' && <HomeMotion />}
+</Document>
