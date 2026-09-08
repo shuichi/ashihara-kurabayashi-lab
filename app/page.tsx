@@ -90,7 +90,6 @@ export default function Home() {
           <div className="about-copy">
             <p>{t.about}</p>
             <p>{t.aboutNote}</p>
-            <p className="ethics-note">{t.ethics}</p>
           </div>
         </div>
         <div className="pillars-section">

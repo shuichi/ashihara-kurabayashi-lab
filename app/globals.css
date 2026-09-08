@@ -217,7 +217,6 @@ h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.875rem, 3vw
 .subsection-title { font-family: var(--serif); font-size: 1.65rem; font-weight: 500; line-height: 1.7; letter-spacing: .035em; margin: 0; }
 .pillars-section .research-grid { margin-top: 30px; }
 .research-item h4 { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; line-height: 1.7; margin: 25px 0 15px; }
-.about-copy .ethics-note { font-size: .875rem; padding-left: 18px; border-left: 2px solid var(--primary); margin-top: 25px; }
 .research-heading, .publication-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; }
 .research-heading h2 span { display: block; }
 .research-heading .section-intro, .publication-heading .section-intro { max-width: 500px; margin: 0 0 8px; }

@@ -13,8 +13,7 @@ const ja = {
   aboutTitle: ['自分の手でつくり、', '動かして、深く知る。'],
   about: '芦原・倉林研究室は、東京理科大学 創域情報学部 情報理工学科の研究室です。多様なシステムと連携しながら、スマートフォンやPC上で動作する、小型・高効率な自律分散型AIを研究します。',
   aboutNote: '中規模データによる学習、公共GPUクラスタでの分散学習、データ自動合成を組み合わせ、用途に特化した国産生成AIの開発を目指します。自ら実装したモデルをゲームなどの体験型システムへ応用し、AIを創る力を育てます。',
-  ethics: '無断収集した著作物に依存せず、学習データの権利と出所に配慮した、倫理的で安全なAIの構築を目指します。',
-  pillarsTitle: '教育と研究の、三本柱。',
+  pillarsTitle: '本研究室における、教育と研究の三本柱。',
   pillars: [
     { label: 'モデルを自らつくる', title: '生成AIを、フルスクラッチで。', description: '独自実装の小型Transformerや、公開予定の潜在拡散モデルを土台に、自分のモデルを設計・実装します。産業界で使える、小型で実用的な生成AIを追究します。' },
     { label: '研究と実践', title: '研究と実務の、両方から学ぶ。', description: 'Cygamesの取締役CTOと研究所長が直接指導。大規模サービス運営とAI研究の知見をもとに、モデル設計、学習基盤、評価、社会実装を一貫して学びます。' },
@@ -108,8 +107,7 @@ const en: typeof ja = {
   aboutTitle: ['Build it. Run it.', 'Understand it.'],
   about: 'Ashihara-Kurabayashi Lab. is part of the Department of Information Science and Technology, Faculty of Information Science and Technology, at Tokyo University of Science. We study small, efficient, autonomous distributed AI that runs on smartphones and PCs while working with other systems.',
   aboutNote: 'We combine training on medium-sized datasets, distributed learning on public GPU clusters, and automated data synthesis to develop specialized generative AI in Japan. By integrating our own models into games and other interactive experiences, we help students learn to create AI.',
-  ethics: 'We aim to build ethical, safe AI with attention to data rights and provenance, without relying on copyrighted works collected without permission.',
-  pillarsTitle: 'Three pillars of learning and research.',
+  pillarsTitle: 'Three pillars of education and research in our lab.',
   pillars: [
     { label: 'BUILD FROM SCRATCH', title: 'Create your own generative AI.', description: 'Design and implement models using our small Transformer implementations and latent diffusion models planned for release. Explore compact, practical generative AI with applications in industry.' },
     { label: 'RESEARCH MEETS PRACTICE', title: 'Learn from research and industry.', description: 'Receive direct guidance from the CTO of Cygames and the director of Cygames Research. Connect model design, training infrastructure, evaluation, and deployment through experience in AI research and large-scale services.' },
