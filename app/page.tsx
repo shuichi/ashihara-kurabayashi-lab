@@ -25,10 +25,6 @@ export default function Home() {
           <KnowledgeField paused={paused} />
         </div>
         <div className="container hero-content">
-          <p className="eyebrow hero-eyebrow">
-            <span className="status-dot" />
-            {t.university}
-          </p>
           <h1 id="hero-title">
             {t.title[0]}
             <br />
