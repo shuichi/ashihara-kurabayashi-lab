@@ -3,6 +3,10 @@ import { glob, file } from "astro/loaders";
 import { z } from "astro/zod";
 import * as schemas from "./content-schemas";
 export const collections = {
+  photography: defineCollection({
+    loader: glob({ pattern: "*.json", base: "./content/photography" }),
+    schema: schemas.photographySchema,
+  }),
   news: defineCollection({
     loader: file("./content/news.json"),
     schema: schemas.newsSchema,

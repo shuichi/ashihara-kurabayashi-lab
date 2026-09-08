@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
 import { KnowledgeField } from "@/components/knowledge-field";
 import { ContactCallout } from "@/components/contact-callout";
 import { NewsSection } from "@/components/news-section";
+import { ActivityHighlights } from "@/components/activity-highlights";
 import { useSite } from "@/components/site-shell";
 import { copy } from "./content";
 import { navigation, structureCopy } from "./navigation";
@@ -97,6 +98,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ActivityHighlights />
       <section className="home-guide" aria-labelledby="guide-title">
         <div className="container section">
           <h2 id="guide-title">{s.guide}</h2>

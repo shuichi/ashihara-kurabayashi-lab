@@ -3,6 +3,7 @@ import { ArrowUpRight, Menu, Moon, Sun } from "lucide-react";
 import { copy } from "@/app/content";
 import { navigation } from "@/app/navigation";
 import { pageHref, type Language, type PagePath } from "@/lib/navigation";
+import type { PhotoAsset, PhotoId } from "@/app/photography";
 
 export type Portrait = { src: string; webp: string; avif: string; width: number; height: number };
 export type SiteProps = {
@@ -10,6 +11,7 @@ export type SiteProps = {
   pathname: PagePath;
   base: string;
   portraits: Record<string, Portrait>;
+  photos: Partial<Record<PhotoId, PhotoAsset>>;
   about?: ReactNode;
 };
 const SiteContext = createContext<SiteProps | null>(null);

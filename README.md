@@ -87,12 +87,16 @@ SITE_URL=https://lab.example.org SITE_BASE=/ SITE_INDEXABLE=false npm run build
 | 共通文言／メニュー            | `content/common/`・`content/navigation/`                 |
 | 地図の検索語・既存フォームURL | `content/site.json`                                      |
 | 教員写真の原本                | `assets/profile-ashihara.png`・`profile-kurabayashi.png` |
+| 活動写真の原本                | `assets/activities/`                                    |
+| 活動写真の説明・代替テキスト  | `content/photography/ja.json`・`en.json`                 |
 
 日英の同じ項目を一緒に更新し、`npm test` と `npm run build` を実行してください。Markdown冒頭の `language` はファイル名と一致させます。JSONの型、空文字、日英の項目・件数の不一致、論文IDの重複、研究事例からの参照切れはビルド時に検出します。
 
+活動写真はトップページに3テーマの入口を置き、オープンキャンパスの3枚を配属案内、Gen AI Summit 2025を教員紹介、百科事典を研究実績に掲載しています。原本から幅640・1280・1920pxのAVIF/WebPをビルド時に生成し、画面幅に合う画像を読み込みます。写真はトリミングせず、元の縦横比を保ちます。提供内容と掲載先は `docs/photo-sources.md` を参照してください。
+
 お知らせは `date`（YYYY-MM-DD）の新しい順に直近3件をトップに表示します。追加時は一意の `id` と日英の本文を記入し、外部リンクがなければ `url` は `null` にします。論文に関する項目は `publicationId` に既存の論文IDを指定します。初期掲載分の日付・出典は `docs/news-sources.md` に記録しています。配属案内冒頭の見学・相談文は `content/students/ja.json`・`en.json` の `visit` から更新でき、募集条件・日程は確定後に記入してください。
 
-波形マークは `public/favicon.svg` をfavicon・ヘッダー・共有画像で共用します。共有画像 `social.png` はビルド時に同じSVGを合成するため、マークの更新後は再ビルドします。
+L＋点のマークは `public/favicon.svg` をfavicon・ヘッダー・共有画像で共用します。共有画像 `social.png` はビルド時に同じSVGを合成するため、マークの更新後は再ビルドします。
 
 論文を追加する場合は一意の `id` を付け、既存のIDは変更しないでください。新しい年は自動的に一覧へ加わります。出典のない掲載予定論文は `url: null` と `forthcoming: true` にできます。元の36件の書誌情報、著者、出典、掲載予定の状態、研究事例からの参照を保持しています。以前の所属時の業績も含み、すべてを新設研究室の在籍中の成果として扱うものではありません。
 

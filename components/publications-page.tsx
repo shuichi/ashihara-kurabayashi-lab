@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useSite } from "./site-shell";
 import { PageHeader } from "./page-header";
 import { PublicationsList, publicationYears } from "./publications-list";
+import { ActivityFeature } from "./activity-feature";
 import { copy } from "@/app/content";
 import { publications } from "@/app/publications";
 import { navigation, structureCopy } from "@/app/navigation";
@@ -15,6 +16,7 @@ export function PublicationsPage() {
   return (
     <div className="subpage publications-page">
       <PageHeader title={page.label} intro={t.publicationsIntro} />
+      <ActivityFeature kind="encyclopedia" />
       <div className="container publication-index">
         <div className="publication-index-heading">
           <h2>{s.years}</h2>

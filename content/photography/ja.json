@@ -1,0 +1,43 @@
+{
+  "homeTitle": "教育・研究の現場から",
+  "openCampus": {
+    "label": "教育・オープンキャンパス",
+    "title": "オープンキャンパス",
+    "description": "これから大学で学ぶ皆さんへ。オープンキャンパスでの講演の様子を紹介します。",
+    "link": "配属案内を見る"
+  },
+  "summit": {
+    "label": "国際交流",
+    "title": "Gen AI Summit 2025",
+    "description": "カリフォルニア大学サンディエゴ校（UCSD）で開催された Gen AI Summit 2025 の一場面。",
+    "link": "教員紹介を見る"
+  },
+  "encyclopedia": {
+    "label": "学術出版・編纂",
+    "title": "Encyclopedia of Computer Graphics and Games",
+    "description": "倉林修一が編纂に携わった、コンピュータグラフィックスとゲームに関する百科事典。",
+    "link": "研究実績を見る"
+  },
+  "photos": {
+    "campusOverview": {
+      "alt": "講演者と「これから大学生になる皆さんへ」のスライドが映る講堂",
+      "caption": "これから大学生になる皆さんへ"
+    },
+    "campusTalk": {
+      "alt": "オープンキャンパスで、マイクを手に身振りを交えて説明する講演者",
+      "caption": "オープンキャンパスでの講演風景"
+    },
+    "campusSpeaker": {
+      "alt": "オープンキャンパスで、マイクのある演台の前で話す講演者",
+      "caption": "オープンキャンパスでの講演風景"
+    },
+    "summit": {
+      "alt": "Gen AI Summit 2025 の会場で、青いスクリーンを背にテーブルに着席する参加者",
+      "caption": "Gen AI Summit 2025 ／ UCSD"
+    },
+    "encyclopedia": {
+      "alt": "Encyclopedia of Computer Graphics and Games の書籍と、編纂メンバーを紹介する見開きページ",
+      "caption": "Encyclopedia of Computer Graphics and Games"
+    }
+  }
+}

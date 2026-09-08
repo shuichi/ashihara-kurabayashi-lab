@@ -9,8 +9,14 @@ import { languages, pagePaths,  } from '../../lib/navigation';
 import { navigation } from '../../app/navigation';
 import ashihara from '../../assets/profile-ashihara.png';
 import kurabayashi from '../../assets/profile-kurabayashi.png';
+import campusOverview from '../../assets/activities/open-campus-overview.jpg';
+import campusTalk from '../../assets/activities/open-campus-talk.jpg';
+import campusSpeaker from '../../assets/activities/open-campus-speaker.jpg';
+import summit from '../../assets/activities/ucsd-genai-summit-2025.jpg';
+import encyclopedia from '../../assets/activities/encyclopedia-computer-graphics-games.jpg';
+import type { PhotoId } from '../../app/photography';
 export const getStaticPaths = (async () => {
-  await Promise.all([getCollection('home'), getCollection('research'), getCollection('people'), getCollection('publications'), getCollection('students'), getCollection('common'), getCollection('pages'), getCollection('navigation'), getCollection('bibliography'), getCollection('about'), getCollection('news')]);
+  await Promise.all([getCollection('home'), getCollection('research'), getCollection('people'), getCollection('publications'), getCollection('students'), getCollection('common'), getCollection('pages'), getCollection('navigation'), getCollection('bibliography'), getCollection('about'), getCollection('news'), getCollection('photography')]);
   return languages.flatMap(language => pagePaths.map(pathname => ({
     params: { page: [language === 'en' ? 'en' : '', pathname.slice(1)].filter(Boolean).join('/') || undefined },
     props: { language, pathname },
@@ -29,8 +35,32 @@ const portraits = Object.fromEntries(await Promise.all(
     return [email, { src: webp.src, webp: webp.src, avif: avif.src, width: 255, height: 312 }];
   }),
 ));
+const photoSources = { campusOverview, campusTalk, campusSpeaker, summit, encyclopedia };
+const pagePhotos: Partial<Record<typeof pathname, PhotoId[]>> = {
+  '/': ['campusSpeaker', 'summit', 'encyclopedia'],
+  '/students': ['campusOverview', 'campusTalk', 'campusSpeaker'],
+  '/people': ['summit'],
+  '/publications': ['encyclopedia'],
+};
+const photos = Object.fromEntries(await Promise.all((pagePhotos[pathname] ?? []).map(async (id) => {
+  const src = photoSources[id];
+  const variants = await Promise.all([640, 1280, 1920].map(async (width) => {
+    const [webp, avif] = await Promise.all([
+      getImage({ src, format: 'webp', width, quality: 80 }),
+      getImage({ src, format: 'avif', width, quality: 60 }),
+    ]);
+    return { width, webp: webp.src, avif: avif.src };
+  }));
+  return [id, {
+    src: variants[1].webp,
+    webp: variants.map(image => `${image.webp} ${image.width}w`).join(', '),
+    avif: variants.map(image => `${image.avif} ${image.width}w`).join(', '),
+    width: src.width,
+    height: src.height,
+  }];
+})));
 ---
 <Document language={language} pathname={pathname} title={title} description={info.description}>
-  <SitePage language={language} pathname={pathname} base={import.meta.env.BASE_URL} portraits={portraits}>{About && <About slot="about" />}</SitePage>
+  <SitePage language={language} pathname={pathname} base={import.meta.env.BASE_URL} portraits={portraits} photos={photos}>{About && <About slot="about" />}</SitePage>
   {pathname === '/' && <HomeMotion />}
 </Document>

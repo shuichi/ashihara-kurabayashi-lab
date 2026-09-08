@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useSite } from "@/components/site-shell";
 import { PageHeader } from "@/components/page-header";
 import { ContactCallout } from "@/components/contact-callout";
+import { ActivityFeature } from "@/components/activity-feature";
 import { copy } from "@/app/content";
 import { navigation } from "@/app/navigation";
 export function PeoplePage() {
@@ -51,6 +52,7 @@ export function PeoplePage() {
           ))}
         </div>
       </section>
+      <ActivityFeature kind="summit" />
       <ContactCallout />
     </div>
   );

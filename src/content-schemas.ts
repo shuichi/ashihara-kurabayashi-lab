@@ -1,4 +1,35 @@
 import { z } from "astro/zod";
+const activitySchema = z
+  .object({
+    label: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1),
+    link: z.string().min(1),
+  })
+  .strict();
+const photoTextSchema = z
+  .object({
+    alt: z.string().min(1),
+    caption: z.string().min(1),
+  })
+  .strict();
+export const photographySchema = z
+  .object({
+    homeTitle: z.string().min(1),
+    openCampus: activitySchema,
+    summit: activitySchema,
+    encyclopedia: activitySchema,
+    photos: z
+      .object({
+        campusOverview: photoTextSchema,
+        campusTalk: photoTextSchema,
+        campusSpeaker: photoTextSchema,
+        summit: photoTextSchema,
+        encyclopedia: photoTextSchema,
+      })
+      .strict(),
+  })
+  .strict();
 const newsTranslationSchema = z
   .object({
     category: z.string().min(1),

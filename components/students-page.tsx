@@ -3,6 +3,8 @@ import { PageLink } from "@/components/page-link";
 import { useSite } from "@/components/site-shell";
 import { PageHeader } from "@/components/page-header";
 import { ContactCallout } from "@/components/contact-callout";
+import { OpenCampusGallery } from "@/components/open-campus-gallery";
+import { photography } from "@/app/photography";
 import { copy } from "@/app/content";
 import { navigation, structureCopy } from "@/app/navigation";
 
@@ -22,6 +24,7 @@ export function StudentsPage() {
           { href: "#requirements", label: s.requirements },
           { href: "#life", label: s.life },
           { href: "#roadmap", label: s.roadmap },
+          { href: "#open-campus", label: photography[language].openCampus.title },
           { href: "#faq", label: s.faq },
         ]}
       >
@@ -141,6 +144,7 @@ export function StudentsPage() {
         </div>
       </section>
 
+      <OpenCampusGallery />
       <section id="faq" className="container section faq-section">
         <div className="faq-heading">
           <h2>{s.faq}</h2>

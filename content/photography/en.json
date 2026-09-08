@@ -1,0 +1,43 @@
+{
+  "homeTitle": "Teaching and research in focus",
+  "openCampus": {
+    "label": "Teaching & outreach",
+    "title": "Open campus",
+    "description": "A glimpse of our open-campus talks for students preparing to enter university.",
+    "link": "Explore student information"
+  },
+  "summit": {
+    "label": "International exchange",
+    "title": "Gen AI Summit 2025",
+    "description": "A scene from Gen AI Summit 2025, held at the University of California San Diego (UCSD).",
+    "link": "Meet the faculty"
+  },
+  "encyclopedia": {
+    "label": "Academic publishing",
+    "title": "Encyclopedia of Computer Graphics and Games",
+    "description": "An encyclopedia of computer graphics and games that Shuichi Kurabayashi helped compile.",
+    "link": "Explore publications"
+  },
+  "photos": {
+    "campusOverview": {
+      "alt": "A speaker in a lecture hall beside a slide addressed to future university students",
+      "caption": "A message to future university students"
+    },
+    "campusTalk": {
+      "alt": "A speaker holding a microphone and gesturing during an open-campus talk",
+      "caption": "A talk at open campus"
+    },
+    "campusSpeaker": {
+      "alt": "A speaker at a lectern with a microphone during an open-campus talk",
+      "caption": "A talk at open campus"
+    },
+    "summit": {
+      "alt": "A participant seated at a table in front of a blue screen at Gen AI Summit 2025",
+      "caption": "Gen AI Summit 2025 / UCSD"
+    },
+    "encyclopedia": {
+      "alt": "Volumes of Encyclopedia of Computer Graphics and Games with open pages introducing the editorial team",
+      "caption": "Encyclopedia of Computer Graphics and Games"
+    }
+  }
+}

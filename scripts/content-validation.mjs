@@ -11,6 +11,7 @@ export const collections = [
   "common",
   "pages",
   "navigation",
+  "photography",
 ];
 export function readContent(root = "content") {
   const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
