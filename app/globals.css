@@ -407,7 +407,17 @@ h2 {
   border-bottom: 1px solid var(--border);
 }
 .site-footer {
+  --background: #25453e;
+  --foreground: #f0f3e9;
+  --muted-foreground: #c6d2c7;
+  --primary: #c6ddce;
+  --border: #5c7667;
+  background: var(--background);
+  color: var(--foreground);
   border-top: 1px solid var(--border);
+}
+.dark .site-footer {
+  --background: #203c35;
 }
 .footer-inner {
   align-items: center;
@@ -690,11 +700,9 @@ h2 {
   margin-top: 29px;
 }
 .students-section {
-  background: #25453e;
-  color: #f0f3e9;
-}
-.dark .students-section {
-  background: #203c35;
+  border-top: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
 }
 .students-heading {
   display: grid;
@@ -710,21 +718,18 @@ h2 {
 .students-heading p {
   font-size: 1rem;
   line-height: 2.1;
-  color: #c6d2c7;
+  color: var(--muted-foreground);
   margin: 0;
   max-width: 460px;
 }
 .students-heading .text-link {
   margin-top: 20px;
-  border-bottom: 1px solid #5c7667;
-}
-.students-section :focus-visible {
-  outline-color: #e9efe1;
+  border-bottom: 1px solid var(--border);
 }
 .preparation {
   margin-top: 68px;
   padding-top: 32px;
-  border-top: 1px solid #587267;
+  border-top: 1px solid var(--border);
 }
 .preparation > h3 {
   font-size: 1.0625rem;
@@ -738,14 +743,14 @@ h2 {
   gap: 38px;
 }
 .step + .step {
-  border-left: 1px solid #4a675a;
+  border-left: 1px solid var(--border);
   padding-left: 38px;
 }
 .step-marker {
   display: flex;
   align-items: center;
   gap: 14px;
-  color: #b6cabb;
+  color: var(--primary);
 }
 .step-marker span:first-child {
   font-family: var(--serif-en);
@@ -753,8 +758,9 @@ h2 {
   font-style: italic;
 }
 .step-marker span:last-child {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
 }
 .step h4 {
   font-family: var(--serif);
@@ -767,7 +773,7 @@ h2 {
 .step p {
   font-size: 1rem;
   line-height: 1.95;
-  color: #c6d2c7;
+  color: var(--muted-foreground);
   margin: 0;
 }
 .faq-section {
@@ -781,32 +787,34 @@ h2 {
 .faq-list {
   border-top: 1px solid var(--border);
 }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
 .faq-question {
-  padding: 25px 0;
-  border-radius: 0;
-  font-weight: 400;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  padding: 24px 0 12px;
+  font-size: 1.0625rem;
+  font-weight: 500;
   line-height: 1.85;
-}
-.faq-question:hover {
-  text-decoration: none;
-  color: var(--primary);
-}
-.faq-question > span:nth-child(2) {
-  flex: 1;
 }
 .question-number {
   font-family: var(--serif-en);
   color: var(--primary);
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-weight: 400;
   font-style: italic;
-  padding-top: 2px;
 }
 .faq-answer {
-  height: auto;
+  padding: 0 0 24px calc(2rem + 12px);
 }
 .faq-answer p {
+  margin: 0;
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1.95;
   color: var(--muted-foreground);
 }
 .is-english .affiliation {
@@ -890,7 +898,7 @@ h2 {
   .step + .step {
     padding-left: 0;
     border-left: 0;
-    border-top: 1px solid #4a675a;
+    border-top: 1px solid var(--border);
     padding-top: 26px;
   }
   .step-marker span:first-child {
@@ -904,13 +912,10 @@ h2 {
     gap: 22px;
   }
   .faq-question {
-    gap: 12px;
-    padding-block: 21px;
+    padding-top: 20px;
   }
   .faq-answer {
-    padding-left: 0;
-    padding-right: 12px;
-    padding-bottom: 23px;
+    padding-bottom: 20px;
   }
   .is-english .affiliation {
     max-width: 75%;
@@ -989,9 +994,6 @@ h2 {
 }
 .projects-section {
   margin-top: 65px;
-}
-.projects-section > .section-intro {
-  max-width: 780px;
 }
 .project-list {
   margin-top: 32px;
@@ -1200,8 +1202,8 @@ h2 {
 }
 .fit-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
 }
 .fit-section > div > .eyebrow {
   color: var(--primary);
@@ -1210,17 +1212,13 @@ h2 {
 .fit-section h2 {
   font-size: 2.15rem;
 }
-.fit-section .section-intro {
-  max-width: 450px;
-}
 .fit-list {
   list-style: disc;
   margin: 0;
   padding-left: 1.25rem;
 }
 .fit-list li {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 6px 0;
   font-size: 1rem;
   line-height: 1.95;
   color: var(--muted-foreground);
@@ -1258,12 +1256,6 @@ h2 {
   line-height: 1.95;
   color: var(--muted-foreground);
   margin: 0;
-}
-.not-required {
-  padding: 30px;
-  background: var(--muted);
-  align-self: start;
-  border-top: 2px solid var(--primary);
 }
 .not-required ul {
   padding-left: 19px;
@@ -1381,7 +1373,7 @@ h2 {
     border-left: 0;
   }
   .skills-grid .step:nth-child(even) {
-    border-left: 1px solid #4a675a;
+    border-left: 1px solid var(--border);
     padding-left: 30px;
   }
   .skills-grid .step h4 {
@@ -1389,15 +1381,13 @@ h2 {
   }
   .people-grid,
   .requirements-grid,
-  .life-grid,
-  .fit-section {
+  .life-grid {
     gap: 40px;
   }
 }
 @media (max-width: 700px) {
   .research-heading,
   .people-grid,
-  .fit-section,
   .requirements-grid,
   .life-grid {
     grid-template-columns: 1fr;
@@ -1482,7 +1472,7 @@ h2 {
     border-left: 0;
   }
   .skills-grid .step + .step {
-    border-top: 1px solid #4a675a;
+    border-top: 1px solid var(--border);
     padding-top: 26px;
   }
   .skills-grid .step p {
@@ -1490,9 +1480,6 @@ h2 {
   }
   .fit-section h2 {
     font-size: 1.85rem;
-  }
-  .not-required {
-    padding: 25px 22px;
   }
   .roadmap-grid {
     grid-template-columns: 1fr;
@@ -1561,6 +1548,9 @@ h2 {
 .subpage-header .section-intro {
   max-width: 740px;
   margin: 19px 0 0;
+}
+.contact-page .subpage-header > .section-intro {
+  max-width: none;
 }
 .visit-callout {
   margin-top: 30px;
@@ -2037,7 +2027,6 @@ html {
 }
 .research-item .eyebrow,
 .project-identity .eyebrow,
-.step-marker span:last-child,
 .roadmap-grid .eyebrow {
   font-size: 0.875rem;
   letter-spacing: 0.025em;
@@ -2436,37 +2425,6 @@ summary {
 }
 [aria-pressed="true"] .motion-play {
   display: block;
-}
-.faq-item {
-  border-bottom: 1px solid var(--border);
-}
-.faq-question {
-  display: flex;
-  align-items: baseline;
-  gap: 18px;
-  min-height: 60px;
-  padding-block: 20px;
-  font-size: 1.0625rem;
-  list-style: none;
-}
-.faq-question::-webkit-details-marker {
-  display: none;
-}
-.faq-question::after {
-  content: "+";
-  margin-left: auto;
-}
-.faq-item[open] .faq-question::after {
-  content: "−";
-}
-.faq-answer {
-  padding: 0 36px 18px;
-  font-size: 1rem;
-  line-height: 1.95;
-  color: var(--muted-foreground);
-}
-.faq-answer p {
-  margin: 0;
 }
 .embed-placeholder {
   padding: 40px;

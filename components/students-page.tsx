@@ -142,22 +142,26 @@ export function StudentsPage() {
       </section>
 
       <OpenCampusGallery />
-      <section id="faq" className="container section faq-section">
+      <section id="faq" className="container section faq-section" aria-labelledby="faq-title">
         <div className="faq-heading">
-          <h2>{s.faq}</h2>
+          <h2 id="faq-title">{s.faq}</h2>
           <p className="section-intro">{t.faqIntro}</p>
         </div>
         <div className="faq-list">
           {t.faq.map((item, i) => (
-            <details className="faq-item" key={item.question} open={i === 0}>
-              <summary className="faq-question">
-                <span className="question-number">Q{String(i + 1).padStart(2, "0")}</span>
+            <article
+              className="faq-item"
+              key={item.question}
+              aria-labelledby={`faq-question-${i + 1}`}
+            >
+              <h3 className="faq-question" id={`faq-question-${i + 1}`}>
+                <span className="question-number">Q{i + 1}</span>
                 <span>{item.question}</span>
-              </summary>
+              </h3>
               <div className="faq-answer">
                 <p>{item.answer}</p>
               </div>
-            </details>
+            </article>
           ))}
         </div>
       </section>

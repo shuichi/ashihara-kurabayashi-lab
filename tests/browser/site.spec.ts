@@ -46,11 +46,15 @@ test("all content, mobile navigation, and FAQ work without JavaScript", async ({
       expect((await page.goto(baseURL! + language + path))?.status()).toBe(200);
       await expect(page.locator("h1")).toBeVisible();
       expect((await page.locator("main").innerText()).length).toBeGreaterThan(200);
+      if (path === "students/") {
+        await expect(page.locator(".faq-question")).toHaveCount(4);
+        await expect(page.locator(".question-number")).toHaveText(["Q1", "Q2", "Q3", "Q4"]);
+        const answers = page.locator(".faq-answer");
+        await expect(answers).toHaveCount(4);
+        for (const answer of await answers.all()) await expect(answer).toBeVisible();
+      }
     }
   await page.goto(baseURL! + "students/");
-  const second = page.locator(".faq-item").nth(1);
-  await second.locator("summary").click();
-  await expect(second.locator(".faq-answer")).toBeVisible();
   await page.locator(".mobile-navigation summary").click();
   await expect(page.locator(".mobile-nav-panel")).toBeVisible();
   await page.locator(".mobile-nav-panel a").filter({ hasText: "教員紹介" }).click();
