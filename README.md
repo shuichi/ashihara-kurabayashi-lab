@@ -1,6 +1,6 @@
 # 芦原・倉林研究室
 
-Ashihara-Kurabayashi Lab. — 東京理科大学 創域情報学部 情報理工学科。
+東京理科大学 創域情報学部 情報理工学科 芦原・倉林研究室Webページ
 
 日本語・英語の研究室サイトです。Astroで14ページを静的HTMLに生成し、GitHub Pagesで公開します。Reactはビルド時のテンプレートに使用し、ブラウザーでのReact起動・hydrationは行いません。公開先にNode.js、SSR、API、データベースは不要です。
 
@@ -87,7 +87,7 @@ SITE_URL=https://lab.example.org SITE_BASE=/ SITE_INDEXABLE=false npm run build
 | 共通文言／メニュー            | `content/common/`・`content/navigation/`                 |
 | 地図の検索語・既存フォームURL | `content/site.json`                                      |
 | 教員写真の原本                | `assets/profile-ashihara.png`・`profile-kurabayashi.png` |
-| 活動写真の原本                | `assets/activities/`                                    |
+| 活動写真の原本                | `assets/activities/`                                     |
 | 活動写真の説明・代替テキスト  | `content/photography/ja.json`・`en.json`                 |
 
 日英の同じ項目を一緒に更新し、`npm test` と `npm run build` を実行してください。Markdown冒頭の `language` はファイル名と一致させます。JSONの型、空文字、日英の項目・件数の不一致、論文IDの重複、研究事例からの参照切れはビルド時に検出します。
