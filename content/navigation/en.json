@@ -3,12 +3,12 @@
     {
       "href": "/",
       "label": "Home",
-      "description": "Our lab and the ideas that guide our research and teaching."
+      "description": "Learn about our lab and the ideas that guide our research and teaching."
     },
     {
       "href": "/research",
       "label": "Research",
-      "description": "Topics and projects in compact generative AI, distributed AI, games, and interaction."
+      "description": "Explore our research topics and projects in compact generative AI, autonomous distributed AI, games, and interaction."
     },
     {
       "href": "/people",
@@ -23,7 +23,7 @@
     {
       "href": "/students",
       "label": "For students",
-      "description": "What you will learn, what to bring, everyday research, and your path through the fourth year."
+      "description": "Learn about the skills you will develop, what we expect before you join, life in the lab, and your path through undergraduate research."
     },
     {
       "href": "/access",

@@ -2,8 +2,8 @@
   "homeTitle": "Teaching and research in focus",
   "openCampus": {
     "label": "Teaching & outreach",
-    "title": "Open campus",
-    "description": "A glimpse of our open-campus talks for students preparing to enter university.",
+    "title": "Open Campus",
+    "description": "A glimpse of our talks at Open Campus events for students preparing to enter university.",
     "link": "Explore student information"
   },
   "summit": {
@@ -25,11 +25,11 @@
     },
     "campusTalk": {
       "alt": "A speaker holding a microphone and gesturing during an open-campus talk",
-      "caption": "A talk at open campus"
+      "caption": "A talk at an Open Campus event"
     },
     "campusSpeaker": {
       "alt": "A speaker at a lectern with a microphone during an open-campus talk",
-      "caption": "A talk at open campus"
+      "caption": "A talk at an Open Campus event"
     },
     "summit": {
       "alt": "A participant seated at a table in front of a blue screen at Gen AI Summit 2025",

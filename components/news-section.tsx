@@ -10,7 +10,11 @@ export function NewsSection() {
     <section id="news" className="container news-section" aria-labelledby="news-title">
       <div className="news-heading">
         <h2 id="news-title">{language === "ja" ? "お知らせ" : "News"}</h2>
-        <p>{language === "ja" ? "研究と、研究室の日々。" : "Research and life in the lab."}</p>
+        <p>
+          {language === "ja"
+            ? "研究成果と、研究室の日々。"
+            : "Research findings and life in the lab."}
+        </p>
       </div>
       <ol className="news-list">
         {latestNews.map((item) => {

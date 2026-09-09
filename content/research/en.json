@@ -5,23 +5,23 @@
     {
       "label": "SMALL TRANSFORMERS",
       "title": "Small Transformers",
-      "description": "Explore lightweight models for the actions and dialogue of game characters. Learn from play logs to estimate difficulty and reasons for player dropout, informing game balance and player experience."
+      "description": "We study lightweight models that generate actions and dialogue for game characters. We also use play logs to estimate game difficulty and factors associated with players leaving the game, informing improvements to game balance and player experience."
     },
     {
       "label": "DATA-CONSCIOUS GENERATION",
       "title": "Image generation with limited data",
-      "description": "Investigate high-quality image generation using medium-sized datasets with verified rights and provenance, alongside synthesized data, without relying on unauthorized data collection."
+      "description": "We investigate high-quality image generation using medium-sized datasets with verified rights and provenance, alongside synthesized data, without relying on unauthorized data collection."
     },
     {
       "label": "WORLD MODELS",
       "title": "World models & interactive AI",
-      "description": "Use approaches such as latent diffusion to predict changes in the world from video, images, and action sequences. Develop predictive and world-understanding models for games and interactive AI."
+      "description": "We use approaches such as latent diffusion to predict changes in the environment from video, images, and action sequences. We aim to build world-understanding models and interactive AI for games."
     }
   ],
-  "computeTitle": "Computing infrastructure for learning",
-  "computeText": "We use public supercomputers such as ABCI 3.0 at AIST and TSUBAME 4.0 at Institute of Science Tokyo. Our research connects distributed training with implementation in interactive systems.",
+  "computeTitle": "Computing infrastructure for model training",
+  "computeText": "We use computing resources suited to our research needs and model scale. Our research covers distributed training methods and ways to implement trained models in interactive systems.",
   "projectsTitle": "Research in practice",
-  "projectsIntro": "Examples connecting AI, games, and interaction. These previous projects offer starting points for new research questions.",
+  "projectsIntro": "These previous projects connect AI, games, and interaction, offering starting points for new research questions.",
   "projects": [
     {
       "name": "Kinetics",
@@ -41,21 +41,21 @@
       "name": "Learned PRNG",
       "label": "GENERATIVE MODELS",
       "title": "Learning to generate random numbers",
-      "description": "Train a generator from existing random numbers using WGAN-GP to produce outputs that pass the NIST test suite. Explore learned random number generation alongside manually designed algorithms.",
+      "description": "This project uses existing random-number sequences to train a generator with WGAN-GP, producing sequences that pass the NIST test suite. It explores learned random number generation alongside manually designed algorithms.",
       "publications": ["publication-08"]
     },
     {
       "name": "Sketch2Map",
       "label": "CREATIVITY SUPPORT",
       "title": "From a hand-drawn sketch to a game map",
-      "description": "A two-stage pix2pix conditional GAN system that turns hand-drawn sketches into game maps. The work is also featured in the book Deep Learning in Gaming and Animations as an application of deep learning to games.",
+      "description": "A two-stage conditional GAN system based on pix2pix that turns hand-drawn sketches into game maps. The work is also featured in the book Deep Learning in Gaming and Animations as an application of deep learning to games.",
       "publications": ["publication-17"]
     },
     {
       "name": "Rayauth",
       "label": "VISION & AUTHENTICATION",
       "title": "Authenticating cards through changing light",
-      "description": "Learn spatiotemporal changes in light caused by holograms and transparent ink structures on cards. Use a smartphone camera to distinguish genuine cards, counterfeits, and screen displays, exploring authentication without embedded chips.",
+      "description": "The model learns spatiotemporal patterns in light produced by holograms and transparent-ink surface structures on cards. Using a smartphone camera, the system distinguishes genuine cards, counterfeit cards, and card images displayed on screens, exploring authentication without embedded chips.",
       "publications": ["publication-02"]
     }
   ],

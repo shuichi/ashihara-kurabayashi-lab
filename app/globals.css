@@ -1214,30 +1214,22 @@ h2 {
   max-width: 450px;
 }
 .fit-list {
-  list-style: none;
+  list-style: disc;
   margin: 0;
-  padding: 0;
+  padding-left: 1.25rem;
 }
 .fit-list li {
-  display: flex;
-  gap: 18px;
   padding: 18px 0;
   border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+  line-height: 1.95;
+  color: var(--muted-foreground);
 }
 .fit-list li:first-child {
   padding-top: 0;
 }
-.fit-list li > span {
-  font-family: var(--serif-en);
-  font-size: 0.875rem;
+.fit-list li::marker {
   color: var(--primary);
-  padding-top: 5px;
-}
-.fit-list p {
-  font-size: 1rem;
-  line-height: 1.95;
-  margin: 0;
-  color: var(--muted-foreground);
 }
 .requirements-grid {
   display: grid;
@@ -1498,9 +1490,6 @@ h2 {
   }
   .fit-section h2 {
     font-size: 1.85rem;
-  }
-  .fit-list li > span {
-    flex-shrink: 0;
   }
   .not-required {
     padding: 25px 22px;

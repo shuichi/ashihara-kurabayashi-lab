@@ -3,24 +3,24 @@
   "openCampus": {
     "label": "教育・オープンキャンパス",
     "title": "オープンキャンパス",
-    "description": "これから大学で学ぶ皆さんへ。オープンキャンパスでの講演の様子を紹介します。",
+    "description": "これから大学で学ぶ皆さんに向けた、オープンキャンパスでの講演の様子を紹介します。",
     "link": "配属案内を見る"
   },
   "summit": {
     "label": "国際交流",
     "title": "Gen AI Summit 2025",
-    "description": "カリフォルニア大学サンディエゴ校（UCSD）で開催された Gen AI Summit 2025 の一場面。",
+    "description": "カリフォルニア大学サンディエゴ校（UCSD）で開催された「Gen AI Summit 2025」の一場面。",
     "link": "教員紹介を見る"
   },
   "encyclopedia": {
     "label": "学術出版・編纂",
     "title": "Encyclopedia of Computer Graphics and Games",
-    "description": "倉林修一が編纂に携わった、コンピュータグラフィックスとゲームに関する百科事典。",
+    "description": "倉林 修一教授が編纂に携わった、コンピュータグラフィックスとゲームに関する百科事典。",
     "link": "研究実績を見る"
   },
   "photos": {
     "campusOverview": {
-      "alt": "講演者と「これから大学生になる皆さんへ」のスライドが映る講堂",
+      "alt": "講堂で、講演者の横のスクリーンに「これから大学生になる皆さんへ」と表示されている様子",
       "caption": "これから大学生になる皆さんへ"
     },
     "campusTalk": {

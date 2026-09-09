@@ -1,12 +1,12 @@
 {
   "title": ["From using AI", "to creating it."],
-  "intro": "Small, efficient AI that acts autonomously.",
-  "description": "Design, train, evaluate—and bring your models to life.",
+  "intro": "Small, intelligent AI that acts autonomously.",
+  "description": "Design, train, evaluate, and deploy models in real-world applications.",
   "primary": "Explore our research",
   "secondary": "For prospective students",
   "focus": "Small generative models / Autonomous distributed AI / Games & interactive systems",
   "aboutTitle": ["Build it. Run it.", "Understand it."],
-  "pillarsTitle": "Three pillars of education and research in our lab.",
+  "pillarsTitle": "Three pillars supporting education and research in our lab.",
   "pillars": [
     {
       "label": "BUILD FROM SCRATCH",
@@ -21,7 +21,7 @@
     {
       "label": "GLOBAL COLLABORATION",
       "title": "Connect your research to the world.",
-      "description": "Participate in collaborations with institutions including UC San Diego, Tokyo University of the Arts, Institute of Science Tokyo, and Keio University. Work with researchers in Japan and abroad, with the aim of submitting to international conferences."
+      "description": "Depending on your research topic and progress, you may have opportunities to collaborate with institutions including UC San Diego, Tokyo University of the Arts, Institute of Science Tokyo, and Keio University. Work with researchers in Japan and abroad, with the aim of submitting to international conferences."
     }
   ]
 }

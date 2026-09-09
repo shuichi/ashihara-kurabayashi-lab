@@ -86,11 +86,8 @@ export function StudentsPage() {
             <p className="section-intro">{t.fitIntro}</p>
           </div>
           <ul className="fit-list">
-            {t.fit.map((item, i) => (
-              <li key={item}>
-                <span>0{i + 1}</span>
-                <p>{item}</p>
-              </li>
+            {t.fit.map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>

@@ -2,7 +2,7 @@
   "visit": {
     "title": "Visit the lab or talk with us",
     "intro": "Discuss research topics and learning opportunities before deciding whether to join the lab.",
-    "action": "Ask about a visit or joining",
+    "action": "Contact us about visiting or joining",
     "details": [
       {
         "label": "Who this is for",
@@ -10,18 +10,18 @@
       },
       {
         "label": "Eligibility and timing",
-        "text": "Please contact us about eligibility and the schedule for joining."
+        "text": "Please contact us about eligibility requirements and the lab assignment timeline."
       },
       {
         "label": "How to get in touch",
-        "text": "Use the email addresses or form on our contact page. Tell us about your research interests and when you would like to visit."
+        "text": "Use the email addresses or form on our contact page. Tell us about your research interests or what you would like to discuss. If you would like to visit, include your preferred timing."
       }
     ]
   },
   "studentsTitle": ["From making things", "to making discoveries."],
   "studentsIntro": "Design, implement, train, and evaluate your own models—and turn them into working systems. We welcome students who want to go beyond using existing AI.",
   "studentsLink": "Read the FAQs",
-  "skillsTitle": "Four capabilities to develop here.",
+  "skillsTitle": "Four skills you will develop in the lab.",
   "skills": [
     {
       "label": "DESIGN",
@@ -31,7 +31,7 @@
     {
       "label": "TRAIN",
       "title": "Run training",
-      "description": "Gain practical experience with automated data synthesis and distributed learning on public GPU clusters, developing the skills to carry research through."
+      "description": "Use computing resources suited to your research and gain experience with automated data synthesis and distributed training. Develop the practical skills to see a research project through, from planning and experiments to evaluation and presenting results."
     },
     {
       "label": "EVALUATE",
@@ -52,11 +52,11 @@
     "You want to create across fields such as games, image generation, creativity support, and optimization.",
     "You enjoy discussing ideas and making progress with others, as well as working independently."
   ],
-  "requiredTitle": "What we ask you to bring",
+  "requiredTitle": "What we expect before you join",
   "required": [
     {
       "title": "Basic Python skills",
-      "description": "Be able to write simple programs using variables, conditionals, functions, lists, and dictionaries. You do not need to know everything."
+      "description": "Be able to write simple programs using variables, conditionals, functions, lists, and dictionaries. You do not need to have mastered Python before joining."
     },
     {
       "title": "Persistence in solving problems",
@@ -69,21 +69,21 @@
   ],
   "notRequiredTitle": "What you can learn after joining",
   "notRequired": [
-    "Operating large GPU clusters",
-    "Presenting at international conferences and writing papers",
-    "Advanced mathematics or fully developed expertise",
-    "Game development or implementing generative AI models"
+    "How to use computing resources for distributed training",
+    "How to present at international conferences and write papers",
+    "The mathematical knowledge and expertise needed for your research",
+    "The skills to implement games and generative AI models"
   ],
-  "notRequiredNote": "You do not need these experiences before joining. With curiosity and persistence, you will build them gradually through research.",
+  "notRequiredNote": "You do not need to have acquired this knowledge or these skills before joining. With curiosity and persistence, you will develop them gradually through research.",
   "lifeTitle": "Life in the lab",
   "life": [
     {
-      "title": "From small reproductions to your own questions",
+      "title": "From small-scale replication studies to your own research questions",
       "description": "Begin by reproducing experiments and reading existing implementations, then develop your own problem statements and improvements. Visits to research collaborators also bring knowledge from real-world practice into your work."
     },
     {
       "title": "Let questions start the conversation",
-      "description": "Seminars include progress updates, technical discussions, design reviews, paper reading, and interpretation of experiments. Where appropriate, the work extends to partner discussions, external presentations, and demonstrations."
+      "description": "Seminars include progress updates, technical discussions, design reviews, paper discussions, and interpretation of experimental results. Where appropriate, the work extends to partner discussions, external presentations, and demonstrations."
     }
   ],
   "roadmapTitle": "Your path through undergraduate research.",
@@ -105,7 +105,7 @@
       "season": "Year 4 · Autumn–Winter",
       "label": "COMMUNICATION",
       "title": "Bring your findings together",
-      "description": "Analyze your results and complete your graduation research. Depending on the work, explore demonstrations, external presentations, and paper submissions."
+      "description": "Analyze your results and complete your undergraduate research project. Depending on the work, explore demonstrations, external presentations, and paper submissions."
     }
   ],
   "faqTitle": "Before your first step.",
@@ -120,8 +120,8 @@
       "answer": "Most people find it demanding at first. Rather than aiming for perfect understanding immediately, begin with the important figures, equations, and experimental settings, and build your reading skills over time."
     },
     {
-      "question": "I have used generative AI, but never built it.",
-      "answer": "That is exactly the stage we welcome. Starting with basic Python skills, you will gain experience designing, implementing, and training models. Our focus is helping you progress from an AI user to an AI developer."
+      "question": "I have used generative AI, but I have never built a generative AI model.",
+      "answer": "We welcome students at that stage, too. Starting with basic Python skills, you will gain experience designing, implementing, and training models. Our focus is helping you progress from an AI user to an AI developer."
     },
     {
       "question": "How do I know whether research is right for me?",

@@ -1,7 +1,7 @@
 {
-  "publicationsTitle": "Publications & research",
-  "publicationsIntro": "Related work that informs our research, including projects from previous years. Publication titles and author names are retained in their original language.",
-  "publicationLink": "Read the publication",
+  "publicationsTitle": "Publications & research outputs",
+  "publicationsIntro": "Research outputs related to the lab’s fields, including work completed by its faculty before joining the lab. Publication titles and author names are retained in their original language.",
+  "publicationLink": "View publication details",
   "forthcoming": "To appear",
   "showPublications": "View all publications",
   "hidePublications": "Collapse the list"

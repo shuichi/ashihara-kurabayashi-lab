@@ -68,12 +68,12 @@ export function AccessPage() {
               data-embed-title={t.mapTitle}
               hidden
             >
-              {language === "ja" ? "ここに地図を表示" : "Show map here"}
+              {language === "ja" ? "このページに地図を表示" : "Show the map on this page"}
             </button>
             <p className="embed-note">
               {language === "ja"
-                ? "地図を表示すると、Googleに接続します。"
-                : "Showing the map connects to Google."}
+                ? "地図を表示すると、Googleマップに接続します。"
+                : "Showing the map connects to Google Maps."}
             </p>
             <a className="text-link" href={mapLink} target="_blank" rel="noopener noreferrer">
               {t.openMap}

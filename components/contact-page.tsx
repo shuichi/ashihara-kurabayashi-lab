@@ -21,7 +21,7 @@ export function ContactPage() {
         </div>
         <section
           className="contact-emails"
-          aria-label={language === "ja" ? "教員へのメール" : "Email the faculty"}
+          aria-label={language === "ja" ? "教員のメールアドレス" : "Faculty email addresses"}
         >
           {copy[language].people.map((person) => (
             <article key={person.email}>
@@ -35,7 +35,7 @@ export function ContactPage() {
             <p>
               {language === "ja"
                 ? "Googleフォームからもお問い合わせいただけます。"
-                : "You can also contact us using Google Forms."}
+                : "You can also contact us using our Google form."}
             </p>
             <button
               type="button"
@@ -45,12 +45,12 @@ export function ContactPage() {
               data-embed-height="1480"
               hidden
             >
-              {language === "ja" ? "ここにフォームを表示" : "Show form here"}
+              {language === "ja" ? "このページにフォームを表示" : "Show the form on this page"}
             </button>
             <p className="embed-note">
               {language === "ja"
-                ? "フォームを表示すると、Googleに接続します。"
-                : "Showing the form connects to Google."}
+                ? "フォームを表示すると、Googleフォームに接続します。"
+                : "Showing the form connects to Google Forms."}
             </p>
             <a className="text-link" href={formLink} target="_blank" rel="noopener noreferrer">
               {t.openForm}
