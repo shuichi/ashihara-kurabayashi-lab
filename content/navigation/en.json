@@ -26,6 +26,11 @@
       "description": "Learn about the skills you will develop, what we expect before you join, life in the lab, and your path through undergraduate research."
     },
     {
+      "href": "/life",
+      "label": "Lab life",
+      "description": "See how students develop ideas together, review results, and bring their thinking into discussion with faculty."
+    },
+    {
       "href": "/access",
       "label": "Access",
       "description": "Find us on the fourth floor of Building 6 at the Noda Campus of Tokyo University of Science."
