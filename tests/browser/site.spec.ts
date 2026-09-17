@@ -1,6 +1,15 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-const pages = ["", "research/", "people/", "publications/", "students/", "access/", "contact/"];
+const pages = [
+  "",
+  "research/",
+  "people/",
+  "publications/",
+  "students/",
+  "life/",
+  "access/",
+  "contact/",
+];
 for (const language of ["", "en/"])
   for (const path of pages) {
     test(`static page ${language}${path || "home"}`, async ({ page }) => {

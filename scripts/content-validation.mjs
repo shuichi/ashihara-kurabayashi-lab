@@ -8,6 +8,7 @@ export const collections = [
   "people",
   "publications",
   "students",
+  "life",
   "common",
   "pages",
   "navigation",

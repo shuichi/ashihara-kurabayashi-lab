@@ -38,6 +38,26 @@
     "encyclopedia": {
       "alt": "Encyclopedia of Computer Graphics and Games の書籍と、編纂メンバーを紹介する見開きページ",
       "caption": "Encyclopedia of Computer Graphics and Games"
+    },
+    "dailyWhiteboardGroup": {
+      "alt": "3人が資料を手に、図が描かれたホワイトボードの前で話し合っている",
+      "caption": "資料と図を行き来しながら考えを確かめる"
+    },
+    "dailyNotes": {
+      "alt": "ホワイトボードの横で学生が資料にメモを取り、手前の机にノートパソコンが並んでいる",
+      "caption": "議論の要点を、その場で資料へ書き留める"
+    },
+    "dailyResultsClose": {
+      "alt": "モニター上のグラフを指しながら、3人が笑顔で意見を交わしている",
+      "caption": "対話の中から、次の問いを見つける"
+    },
+    "facultyDiscussionWide": {
+      "alt": "教員がモニター上の複数の実験グラフを指し、学生2人と結果について議論している",
+      "caption": "先生の視点から実験結果を読み直す"
+    },
+    "facultyPresentationRoom": {
+      "alt": "教員と学生2人がモニター上の研究資料を見ながら笑顔で意見を交わしている",
+      "caption": "同じ資料を囲み、対話から考えを深める"
     }
   }
 }
