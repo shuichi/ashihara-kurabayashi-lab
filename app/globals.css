@@ -1293,6 +1293,10 @@ h2 {
   color: var(--muted-foreground);
   margin: 0;
 }
+.life-page-link {
+  margin-top: 28px;
+  border-bottom: 1px solid var(--border);
+}
 .roadmap {
   margin-top: 70px;
   padding-top: 40px;
@@ -1992,6 +1996,184 @@ h2 {
 @media print {
   .activity-figure,
   .activity-link {
+    break-inside: avoid;
+  }
+}
+
+/* Lab life — documentary sequences that follow discussion into verification. */
+.life-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 92px;
+}
+.life-hero-copy {
+  padding-bottom: 34px;
+}
+.life-hero-copy .eyebrow {
+  color: var(--primary);
+  margin: 0 0 22px;
+}
+.life-hero-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 24px;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+.life-hero-copy > p:last-child,
+.life-section-heading > p,
+.life-scene-copy > p:last-child,
+.life-process-grid p {
+  color: var(--muted-foreground);
+  line-height: 2;
+  margin: 0;
+}
+.life-scenes {
+  border-block: 1px solid var(--border);
+}
+.life-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 64px;
+  align-items: start;
+}
+.life-process > .life-section-heading {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+.life-scene {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+  margin-top: 72px;
+  padding-top: 42px;
+  border-top: 1px solid var(--border);
+}
+.life-scene-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.life-scene-copy .activity-label {
+  margin: 0;
+}
+.life-scene-copy h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.7;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+.life-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 24px;
+  align-items: start;
+}
+.life-photo-grid-2 {
+  width: min(100%, 608px);
+  margin-left: auto;
+  grid-template-columns: minmax(0, 1fr);
+}
+.life-photo-grid-3 {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 701px) {
+  .life-scene:has(.life-photo-grid-1) {
+    row-gap: 32px;
+  }
+  .life-photo-grid-1 {
+    display: contents;
+  }
+  .life-photo-grid-1 .activity-figure:first-child {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .life-photo-grid-1 .activity-figure:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: min(100%, 500px);
+    justify-self: end;
+  }
+  .life-photo-grid-1 .activity-figure:nth-child(2) .activity-photo {
+    aspect-ratio: 4 / 5;
+  }
+  .life-photo-grid-1 .activity-figure:nth-child(2) .activity-photo img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+.life-process-grid {
+  list-style: none;
+  padding: 0;
+  margin: 48px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.life-process-grid li {
+  padding: 26px 32px 4px 0;
+  border-top: 1px solid var(--border);
+}
+.life-process-grid li + li {
+  padding-left: 32px;
+  border-left: 1px solid var(--border);
+}
+.life-process-grid span {
+  color: var(--primary);
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 1.25rem;
+}
+.life-process-grid h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 18px 0 10px;
+}
+.is-english .life-scene-copy h3 {
+  font-family: var(--serif-en);
+}
+@media (max-width: 700px) {
+  .life-hero {
+    padding-bottom: 56px;
+  }
+  .life-hero-copy,
+  .life-hero,
+  .life-section-heading,
+  .life-scene,
+  .life-scene-copy,
+  .life-photo-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .life-hero-copy {
+    padding-bottom: 6px;
+  }
+  .life-scene {
+    margin-top: 48px;
+    padding-top: 32px;
+  }
+  .life-scene-copy {
+    margin-bottom: 4px;
+  }
+  .life-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 34px;
+  }
+  .life-process-grid li,
+  .life-process-grid li + li {
+    padding: 24px 0;
+    border-left: 0;
+  }
+}
+@media print {
+  .life-scene,
+  .life-process-grid li {
     break-inside: avoid;
   }
 }

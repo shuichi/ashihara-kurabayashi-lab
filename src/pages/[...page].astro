@@ -14,9 +14,14 @@ import campusTalk from '../../assets/activities/open-campus-talk.jpg';
 import campusSpeaker from '../../assets/activities/open-campus-speaker.jpg';
 import summit from '../../assets/activities/ucsd-genai-summit-2025.jpg';
 import encyclopedia from '../../assets/activities/encyclopedia-computer-graphics-games.jpg';
+import dailyWhiteboardGroup from '../../assets/activities/20260915_153515.jpg';
+import dailyNotes from '../../assets/activities/20260915_153627.jpg';
+import dailyResultsClose from '../../assets/activities/20260915_153729.jpg';
+import facultyDiscussionWide from '../../assets/activities/faculty-discussion-results.jpg';
+import facultyPresentationRoom from '../../assets/activities/faculty-conversation.jpg';
 import type { PhotoId } from '../../app/photography';
 export const getStaticPaths = (async () => {
-  await Promise.all([getCollection('home'), getCollection('research'), getCollection('people'), getCollection('publications'), getCollection('students'), getCollection('common'), getCollection('pages'), getCollection('navigation'), getCollection('bibliography'), getCollection('about'), getCollection('news'), getCollection('photography')]);
+  await Promise.all([getCollection('home'), getCollection('research'), getCollection('people'), getCollection('publications'), getCollection('students'), getCollection('life'), getCollection('common'), getCollection('pages'), getCollection('navigation'), getCollection('bibliography'), getCollection('about'), getCollection('news'), getCollection('photography')]);
   return languages.flatMap(language => pagePaths.map(pathname => ({
     params: { page: [language === 'en' ? 'en' : '', pathname.slice(1)].filter(Boolean).join('/') || undefined },
     props: { language, pathname },
@@ -35,10 +40,11 @@ const portraits = Object.fromEntries(await Promise.all(
     return [email, { src: webp.src, webp: webp.src, avif: avif.src, width: 255, height: 312 }];
   }),
 ));
-const photoSources = { campusOverview, campusTalk, campusSpeaker, summit, encyclopedia };
+const photoSources = { campusOverview, campusTalk, campusSpeaker, summit, encyclopedia, dailyWhiteboardGroup, dailyNotes, dailyResultsClose, facultyDiscussionWide, facultyPresentationRoom };
 const pagePhotos: Partial<Record<typeof pathname, PhotoId[]>> = {
   '/': ['campusSpeaker', 'summit', 'encyclopedia'],
   '/students': ['campusOverview', 'campusTalk', 'campusSpeaker'],
+  '/life': ['dailyWhiteboardGroup', 'dailyNotes', 'dailyResultsClose', 'facultyDiscussionWide', 'facultyPresentationRoom'],
   '/people': ['summit'],
   '/publications': ['encyclopedia'],
 };
