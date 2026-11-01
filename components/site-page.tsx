@@ -3,6 +3,7 @@ import { ResearchPage } from "./research-page";
 import { PeoplePage } from "./people-page";
 import { PublicationsPage } from "./publications-page";
 import { StudentsPage } from "./students-page";
+import { LifePage } from "./life-page";
 import { AccessPage } from "./access-page";
 import { ContactPage } from "./contact-page";
 import { SiteShell, type SiteProps } from "./site-shell";
@@ -14,6 +15,7 @@ const pages = {
   "/people": PeoplePage,
   "/publications": PublicationsPage,
   "/students": StudentsPage,
+  "/life": LifePage,
   "/access": AccessPage,
   "/contact": ContactPage,
 } satisfies Record<PagePath, ComponentType>;

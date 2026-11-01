@@ -38,6 +38,26 @@
     "encyclopedia": {
       "alt": "Volumes of Encyclopedia of Computer Graphics and Games with open pages introducing the editorial team",
       "caption": "Encyclopedia of Computer Graphics and Games"
+    },
+    "dailyWhiteboardGroup": {
+      "alt": "Three people discuss reference material in front of a whiteboard covered with diagrams",
+      "caption": "Moving between references and sketches to test an idea"
+    },
+    "dailyNotes": {
+      "alt": "A student takes notes beside a whiteboard while laptops sit open on the table",
+      "caption": "Capturing key points from the discussion"
+    },
+    "dailyResultsClose": {
+      "alt": "Three people exchange ideas with smiles while pointing to a graph",
+      "caption": "Finding the next question through conversation"
+    },
+    "facultyDiscussionWide": {
+      "alt": "A faculty member points to several experiment graphs on a monitor while discussing the results with two students",
+      "caption": "Reconsidering experimental results from a faculty perspective"
+    },
+    "facultyPresentationRoom": {
+      "alt": "A faculty member and two students exchange ideas with smiles while viewing research material on a monitor",
+      "caption": "Deepening ideas through conversation around shared material"
     }
   }
 }

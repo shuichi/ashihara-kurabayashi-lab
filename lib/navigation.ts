@@ -6,6 +6,7 @@ export const pagePaths = [
   "/people",
   "/publications",
   "/students",
+  "/life",
   "/access",
   "/contact",
 ] as const;

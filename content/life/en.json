@@ -1,0 +1,44 @@
+{
+  "lifeEyebrow": "LAB LIFE / EVERYDAY RESEARCH",
+  "lifeHeadline": "Think together, discuss with faculty",
+  "lifeLead": "Research is not only time spent working alone at a screen. Students begin by sharing questions, then organize their thinking through diagrams and experimental results. They explain that reasoning to faculty and reconsider it from another perspective. This page follows one conversation as it grows into a lab-wide discussion.",
+  "lifeScenesTitle": "Scenes from a day in the lab",
+  "lifeScenesIntro": "The process begins with conversation among students, moves through visible evidence, and opens into discussion with faculty. These photographs trace how a question deepens within the lab.",
+  "lifeScenes": [
+    {
+      "label": "SCENE 01 / DISCUSS",
+      "title": "A conversation among students",
+      "description": "Students bring references, uncertainties, and observations to one another. They turn one person's question into a shared problem, using diagrams and equations on the whiteboard to make the important points visible."
+    },
+    {
+      "label": "SCENE 02 / REVIEW",
+      "title": "Reviewing results and organizing the explanation",
+      "description": "Students examine experiment graphs and code on the same screen, looking for unexpected behavior and points they still cannot explain. Before presenting to faculty, they organize their interpretation and the questions they want to test next."
+    },
+    {
+      "label": "SCENE 03 / DISCUSS WITH FACULTY",
+      "title": "Explaining the idea and deepening the question with faculty",
+      "description": "Students present the reasoning and experimental results they developed together to the wider lab. Questions and different perspectives from faculty help them revisit assumptions and leave with new questions for the next experiment or investigation."
+    }
+  ],
+  "lifeProcessTitle": "A conversation grows into a lab-wide discussion",
+  "lifeProcessIntro": "The explanation does not begin fully formed. Students develop it through nearby conversations, assemble the evidence, and then bring it into discussion with faculty.",
+  "lifeProcess": [
+    {
+      "label": "01",
+      "title": "Talk it through",
+      "description": "Students share questions and observations and compare how each person sees the problem."
+    },
+    {
+      "label": "02",
+      "title": "Organize the idea",
+      "description": "Diagrams, equations, code, and graphs clarify the explanation and what remains unresolved."
+    },
+    {
+      "label": "03",
+      "title": "Discuss with faculty",
+      "description": "Students explain their evidence, receive questions and guidance, and make the next step concrete."
+    }
+  ],
+  "lifePageLink": "See everyday research in the lab"
+}

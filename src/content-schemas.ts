@@ -26,6 +26,11 @@ export const photographySchema = z
         campusSpeaker: photoTextSchema,
         summit: photoTextSchema,
         encyclopedia: photoTextSchema,
+        dailyWhiteboardGroup: photoTextSchema,
+        dailyNotes: photoTextSchema,
+        dailyResultsClose: photoTextSchema,
+        facultyDiscussionWide: photoTextSchema,
+        facultyPresentationRoom: photoTextSchema,
       })
       .strict(),
   })
@@ -232,6 +237,30 @@ export const studentsSchema = z
           .strict(),
       )
       .min(1),
+  })
+  .strict();
+const lifeCardSchema = z
+  .object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+  })
+  .strict();
+export const lifeSchema = z
+  .object({
+    lifeEyebrow: z.string().min(1),
+    lifeHeadline: z.string().min(1),
+    lifeLead: z.string().min(1),
+    lifeScenesTitle: z.string().min(1),
+    lifeScenesIntro: z.string().min(1),
+    lifeScenes: z
+      .array(lifeCardSchema.extend({ label: z.string().min(1) }).strict())
+      .length(3),
+    lifeProcessTitle: z.string().min(1),
+    lifeProcessIntro: z.string().min(1),
+    lifeProcess: z
+      .array(lifeCardSchema.extend({ label: z.string().min(1) }).strict())
+      .length(3),
+    lifePageLink: z.string().min(1),
   })
   .strict();
 export const commonSchema = z

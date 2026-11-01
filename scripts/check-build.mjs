@@ -109,7 +109,8 @@ for (const language of languages)
     assert.ok(cssGzip <= 12 * 1024, `CSS exceeds 12 KiB gzip: ${relative}`);
   }
 const sitemap = load(read("sitemap.xml").toString(), { xml: true });
-assert.equal(sitemap("url").length, 14);
+const pageCount = languages.length * pagePaths.length;
+assert.equal(sitemap("url").length, pageCount);
 for (const language of languages)
   for (const pathname of pagePaths)
     assert.ok(
@@ -126,6 +127,6 @@ assert.equal(notFound('link[rel="canonical"]').length, 0);
 assert.ok(read("social.png").byteLength > 1000);
 assert.ok(fs.existsSync(path.join(directory, ".nojekyll")));
 console.log(
-  "Verified 14 static pages, all local links and anchors, bibliography, SEO, 404, and asset budgets:",
+  `Verified ${pageCount} static pages, all local links and anchors, bibliography, SEO, 404, and asset budgets:`,
   budgets,
 );

@@ -2,7 +2,7 @@
 
 東京理科大学 創域情報学部 情報理工学科 芦原・倉林研究室Webページ
 
-日本語・英語の研究室サイトです。Astroで14ページを静的HTMLに生成し、GitHub Pagesで公開します。Reactはビルド時のテンプレートに使用し、ブラウザーでのReact起動・hydrationは行いません。公開先にNode.js、SSR、API、データベースは不要です。
+日本語・英語の研究室サイトです。Astroで16ページを静的HTMLに生成し、GitHub Pagesで公開します。Reactはビルド時のテンプレートに使用し、ブラウザーでのReact起動・hydrationは行いません。公開先にNode.js、SSR、API、データベースは不要です。
 
 ## 開発と確認
 
@@ -36,6 +36,7 @@ npm run preview:static
 | 教員紹介     | `/people/`                   | `/en/people/`       |
 | 研究実績     | `/publications/`             | `/en/publications/` |
 | 配属案内     | `/students/`                 | `/en/students/`     |
+| 研究室の日常 | `/life/`                     | `/en/life/`         |
 | アクセス     | `/access/`                   | `/en/access/`       |
 | お問い合わせ | `/contact/`                  | `/en/contact/`      |
 
@@ -83,6 +84,7 @@ SITE_URL=https://lab.example.org SITE_BASE=/ SITE_INDEXABLE=false npm run build
 | 論文の書誌情報                | `content/publications.json`（日英で共有）                |
 | 研究実績ページの表示文言      | `content/publications/ja.json`・`en.json`                |
 | 配属案内・研究室生活・FAQ     | `content/students/ja.json`・`en.json`                    |
+| 日常ページの本文              | `content/life/ja.json`・`en.json`                        |
 | 所在地・問い合わせの表示文言  | `content/pages/ja.json`・`en.json`                       |
 | 共通文言／メニュー            | `content/common/`・`content/navigation/`                 |
 | 地図の検索語・既存フォームURL | `content/site.json`                                      |
@@ -116,9 +118,9 @@ L＋点のマークは `public/favicon.svg` をfavicon・ヘッダー・共有�
 
 ## 検証と性能
 
-`npm run build` は全14ページのHTML、内部リンク・見出し、36件の書誌情報、canonical・hreflang・サイトマップ・404を検査します。ブラウザーに配信するJavaScriptは各ページgzip換算8 KiB以下、CSSは12 KiB以下を予算とし、超過すると失敗します。JSON-LDは実行スクリプトの予算から除外します。Astroが生成する未参照のReactクライアント用ファイルは読み込まれません。
+`npm run build` は全16ページのHTML、内部リンク・見出し、36件の書誌情報、canonical・hreflang・サイトマップ・404を検査します。ブラウザーに配信するJavaScriptは各ページgzip換算8 KiB以下、CSSは12 KiB以下を予算とし、超過すると失敗します。JSON-LDは実行スクリプトの予算から除外します。Astroが生成する未参照のReactクライアント用ファイルは読み込まれません。
 
-PlaywrightはChromium、Firefox、WebKitの60ケースを検証します。axeによるWCAG 2.2 AA関連の自動検査に加え、キーボード操作、直接アクセス、404、旧URL、JavaScript無効、埋め込み、画面幅320–1440px、文字200%での横はみ出しを確認します。これはアクセシビリティ適合の認証や、実機の全組み合わせの保証ではありません。公開後の利用者による確認も続けてください。
+PlaywrightはChromium、Firefox、WebKitの72ケースを検証します。axeによるWCAG 2.2 AA関連の自動検査に加え、キーボード操作、直接アクセス、404、旧URL、JavaScript無効、埋め込み、画面幅320–1440px、文字200%での横はみ出しを確認します。これはアクセシビリティ適合の認証や、実機の全組み合わせの保証ではありません。公開後の利用者による確認も続けてください。
 
 ```sh
 npm run test:performance

@@ -121,6 +121,10 @@ export function StudentsPage() {
               </article>
             ))}
           </div>
+          <PageLink className="text-link life-page-link" href="/life">
+            {t.lifePageLink}
+            <ArrowRight size={17} aria-hidden="true" />
+          </PageLink>
         </div>
         <div id="roadmap" className="roadmap">
           <h2>{s.roadmap}</h2>

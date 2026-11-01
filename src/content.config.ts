@@ -35,6 +35,10 @@ export const collections = {
     loader: glob({ pattern: "*.json", base: "./content/students" }),
     schema: schemas.studentsSchema,
   }),
+  life: defineCollection({
+    loader: glob({ pattern: "*.json", base: "./content/life" }),
+    schema: schemas.lifeSchema,
+  }),
   common: defineCollection({
     loader: glob({ pattern: "*.json", base: "./content/common" }),
     schema: schemas.commonSchema,
