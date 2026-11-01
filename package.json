@@ -18,14 +18,14 @@
     "preview:static": "node scripts/serve-static.mjs"
   },
   "dependencies": {
-    "@astrojs/react": "6.0.5",
-    "astro": "7.3.1",
+    "@astrojs/react": "7.1.2",
+    "astro": "7.4.4",
     "lucide-react": "1.47.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.10",
+    "@astrojs/check": "0.9.12",
     "@axe-core/playwright": "4.13.0",
     "@playwright/test": "1.63.0",
     "@types/node": "26.6.2",
